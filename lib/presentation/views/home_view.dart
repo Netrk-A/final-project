@@ -20,8 +20,6 @@ class HomeView extends StatelessWidget {
             elevation: 2,
             child: Center(child: Text("Ahmed Sec One")),
           ),
-          AhmedSecOne(),
-          Text('Karim tamer'),
           KarimSecOne(),
           Icon(Icons.ac_unit_rounded),
           ///// ya rab
