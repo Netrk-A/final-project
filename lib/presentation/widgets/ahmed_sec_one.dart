@@ -4,6 +4,10 @@ class AhmedSecOne extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Card(
+      color: Colors.amber,
+      elevation: 2,
+      child: Center(child: Text("Ahmed Sec One")),
+    );
   }
 }
