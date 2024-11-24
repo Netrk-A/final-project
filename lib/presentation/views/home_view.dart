@@ -11,7 +11,11 @@ class HomeView extends StatelessWidget {
       body: Column(
         children: [
           AhmedSecOne(),
+          Text('Karim tamer'),
           KarimSecOne(),
+          Icon(Icons.ac_unit_rounded),
+          ///// ya rab
+
         ],
       ),
     );
