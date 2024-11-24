@@ -21,7 +21,11 @@ class HomeView extends StatelessWidget {
             child: Center(child: Text("Ahmed Sec One")),
           ),
           AhmedSecOne(),
+          Text('Karim tamer'),
           KarimSecOne(),
+          Icon(Icons.ac_unit_rounded),
+          ///// ya rab
+
         ],
       ),
     );
