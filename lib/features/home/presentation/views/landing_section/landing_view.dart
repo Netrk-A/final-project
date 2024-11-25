@@ -18,6 +18,7 @@ class LandingView extends StatelessWidget {
       ),
       clipBehavior: Clip.antiAlias,
       elevation: 4.0,
+
       child: Container(
         margin:EdgeInsetsDirectional.only(start: 16.0,top: 16.0,bottom: 13),
         width: double.infinity,
