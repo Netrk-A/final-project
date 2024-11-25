@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:peakmart/app/resources/app_stayles.dart';
 import 'package:peakmart/app/resources/color_manager.dart';
-import 'package:peakmart/featuers/home/presentation/views/bid_section/bid_card_model.dart';
-import 'package:peakmart/featuers/home/presentation/views/bid_section/custom_text_button.dart';
+import 'package:peakmart/features/home/presentation/views/bid_section/bid_card_model.dart';
+import 'package:peakmart/features/home/presentation/views/bid_section/custom_text_button.dart';
 
 class CustomBidItem extends StatelessWidget {
   const CustomBidItem({super.key, required this.bidCardModel});

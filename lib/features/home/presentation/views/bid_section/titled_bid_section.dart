@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:peakmart/app/resources/app_stayles.dart';
-import 'package:peakmart/featuers/home/presentation/views/bid_section/bid_page_view.dart';
+import 'package:peakmart/features/home/presentation/views/bid_section/bid_page_view.dart';
 
 class TitledBidSection extends StatelessWidget {
   const TitledBidSection({super.key, required this.title});

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:peakmart/featuers/home/presentation/views/bid_section/transforming_bid_item.dart';
+import 'package:peakmart/features/home/presentation/views/bid_section/transforming_bid_item.dart';
 
 class BidPageView extends StatefulWidget {
   const BidPageView({super.key});

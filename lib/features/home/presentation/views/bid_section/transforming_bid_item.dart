@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:peakmart/featuers/home/presentation/views/bid_section/custom_bid_item.dart';
-import 'package:peakmart/featuers/home/presentation/views/bid_section/bid_card_model.dart';
+import 'package:peakmart/features/home/presentation/views/bid_section/custom_bid_item.dart';
+import 'package:peakmart/features/home/presentation/views/bid_section/bid_card_model.dart';
 
 class TransformingBidItem extends StatelessWidget {
   const TransformingBidItem(
