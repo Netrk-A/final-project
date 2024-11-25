@@ -10,6 +10,7 @@ class HomeView extends StatelessWidget {
     return ListView(
       children: const [
         LandingView(),
+        // ServicesSection(),
         TitledBidSection(title: 'Trending Bids'),
       ],
     );
