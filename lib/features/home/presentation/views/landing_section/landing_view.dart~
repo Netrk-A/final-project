@@ -11,7 +11,7 @@ class LandingView extends StatelessWidget {
 
   final String title = "Get the deal of a lifetime...";
   final String subtitle = "Join and start bidding!";
-  final String buttonText = "Join Now";
+  final String buttonText = "join now";
 
   @override
   Widget build(BuildContext context) {
