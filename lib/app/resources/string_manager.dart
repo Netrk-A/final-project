@@ -1,4 +1,7 @@
 class AppStrings {
+
+
+  ///////////////////////////////////////////////////////////////
   static const String splashTitle = "FireBox";
   static const String splashSubTitle = "A new way to control your home ";
   static const String noRouteFound = "No Route Found";

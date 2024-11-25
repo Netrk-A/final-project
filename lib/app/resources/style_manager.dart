@@ -4,7 +4,7 @@ import 'font_manager.dart';
 
 TextStyle _getTextStyle(double fontSize, FontWeight fontWeight, Color color) {
   return TextStyle(
-    fontFamily: FontConstants.fontFamily,
+    // fontFamily: FontConstants.fontCabinFamily,
     color: color,
     fontSize: fontSize,
     fontWeight: fontWeight,
@@ -21,6 +21,7 @@ TextStyle getRegularStyle({
     color,
   );
 }
+
 TextStyle getMessageStyle({
   required double fontSize,
   required Color color,
@@ -31,6 +32,7 @@ TextStyle getMessageStyle({
     color,
   );
 }
+
 TextStyle getMediumStyle({
   required double fontSize,
   required Color color,

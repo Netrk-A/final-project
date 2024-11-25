@@ -18,9 +18,9 @@ class LandingView extends StatelessWidget {
       ),
       clipBehavior: Clip.antiAlias,
       elevation: 4.0,
-
       child: Container(
-        margin:EdgeInsetsDirectional.only(start: 16.0,top: 16.0,bottom: 13),
+        margin: const EdgeInsetsDirectional.only(
+            start: 16.0, top: 16.0, bottom: 13),
         width: double.infinity,
         decoration: const BoxDecoration(
             image: DecorationImage(
@@ -30,24 +30,24 @@ class LandingView extends StatelessWidget {
           children: [
             Text(
               title,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 18.0,
                 fontWeight: FontWeight.bold,
               ),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 8.0),
+            const SizedBox(height: 8.0),
             Text(
               subtitle,
               style: TextStyle(fontSize: 16.0, color: Colors.grey[700]),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: () {},
               child: Text(
                 buttonText,
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
               ),
             ),
           ],
