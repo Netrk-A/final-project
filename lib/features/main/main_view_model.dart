@@ -8,7 +8,7 @@ class MainViewModel extends MainViewModelInput {
 
   @override
   void onNavItemTapped(int index) {
-    if (index > 0 && index < 4) {
+    if (index >= 0 && index < 4) {
       currentIndexInput.add(index);
     }
   }

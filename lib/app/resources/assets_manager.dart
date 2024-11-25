@@ -12,8 +12,11 @@ class IconsAssets{
   }
 
 class ImageAssets{
-  static const  String appLogo ="$imagePath/logo.svg";
-  static const  String splash ="$imagePath/splash.png";
+  static const  String landingBg="$imagePath/landing_bg.png";
+
+
+
+
   static const  String apple ='$imagePath/apple.svg';
   static const  String personal= '$imagePath/person.png';
   static const  String trainingImage ='$imagePath/training_image.jpg';

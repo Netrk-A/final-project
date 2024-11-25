@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:peakmart/app/resources/assets_manager.dart';
 import 'package:peakmart/app/resources/color_manager.dart';
 import 'package:peakmart/app/resources/style_manager.dart';
+import 'package:peakmart/features/home/presentation/views/home_view.dart';
 import 'package:peakmart/features/main/main_view_model.dart';
 import 'package:peakmart/features/main/widget/custom_nav_bar.dart';
 
 class MainView extends StatelessWidget {
   MainView({super.key});
 
- final MainViewModel _viewModel = MainViewModel();
+  final MainViewModel _viewModel = MainViewModel();
 
   final List<NavBarItem> _navBarItems = [
     NavBarItem(iconPath: IconsAssets.home, label: 'Home'),
@@ -21,6 +22,13 @@ class MainView extends StatelessWidget {
     _viewModel.onNavItemTapped(index);
   }
 
+  Widget _buildBodyScreens(index) => [
+        HomeView(),
+        Text('Products', style: getBoldStyle(color: ColorManager.primary,fontSize: 20)),
+        Text('Notification',style: getBoldStyle(color: ColorManager.primary,fontSize: 20)),
+        Text('Profile',style: getBoldStyle(color: ColorManager.primary,fontSize: 20)),
+      ][index];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,27 +36,22 @@ class MainView extends StatelessWidget {
         title: const Text('bids'),
       ),
       body: StreamBuilder<int>(
-        stream: _viewModel.currentIndexOutput,
-        builder: (context, snapshot) {
-          return Center(
-            child: Text(
-              'Selected Index: ${snapshot.data??0}',
-              style: getBoldStyle(fontSize: 12, color: ColorManager.primary),
-            ),
-          );
-        }
-      ),
+          stream: _viewModel.currentIndexOutput,
+          builder: (context, snapshot) {
+            return Center(
+              child: _buildBodyScreens(snapshot.data ?? 0),
+            );
+          }),
       bottomNavigationBar: StreamBuilder<int>(
-        stream: _viewModel.currentIndexOutput,
-        builder: (context, snapshot) {
-          return CustomNavigationBar(
-            items: _navBarItems,
-            initialIndex:snapshot.data??0,
-            onTap: _onNavItemTapped,
-            indicatorHeight:6,
-          );
-        }
-      ),
+          stream: _viewModel.currentIndexOutput,
+          builder: (context, snapshot) {
+            return CustomNavigationBar(
+              items: _navBarItems,
+              initialIndex: snapshot.data ?? 0,
+              onTap: _onNavItemTapped,
+              indicatorHeight: 6,
+            );
+          }),
     );
   }
 }
