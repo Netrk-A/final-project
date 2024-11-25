@@ -14,6 +14,19 @@ ThemeData getApplicationTheme() {
     primaryColorDark: ColorManager.darkPrimary,
     disabledColor: ColorManager.grey1,
     splashColor: ColorManager.lightPrimary,
+
+    //color
+    colorScheme: ColorScheme(
+      brightness: Brightness.light,
+      primary: ColorManager.primary,
+      onPrimary: ColorManager.lightPrimary,
+      secondary: ColorManager.darkPrimary,
+      onSecondary: ColorManager.lightPrimary,
+      error: ColorManager.textFormErrorBorder,
+      onError: ColorManager.textFormErrorBorder,
+      surface: ColorManager.white,
+      onSurface: ColorManager.simiBlack,
+    ),
     //cardView theme
     cardTheme: CardTheme(
       color: ColorManager.white,
@@ -24,7 +37,7 @@ ThemeData getApplicationTheme() {
     appBarTheme: AppBarTheme(
       centerTitle: true,
       elevation: AppSize.s4,
-      color: ColorManager.primary,
+      color: ColorManager.darkPrimary,
       shadowColor: ColorManager.lightPrimary,
       titleTextStyle: getRegularStyle(
         fontSize: FontSize.s16,
@@ -37,6 +50,23 @@ ThemeData getApplicationTheme() {
       disabledColor: ColorManager.grey,
       buttonColor: ColorManager.primary,
       splashColor: ColorManager.white,
+    ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      selectedIconTheme: IconThemeData(
+        color: ColorManager.primary,
+      ),
+      unselectedItemColor: ColorManager.grey1,
+      selectedItemColor: ColorManager.primary,
+      showSelectedLabels: true,
+      showUnselectedLabels: true,
+      selectedLabelStyle: getMediumStyle(
+        fontSize: FontSize.s12,
+        color: ColorManager.primary,
+      ),
+      unselectedLabelStyle: getMediumStyle(
+        fontSize: FontSize.s12,
+        color: ColorManager.grey1,
+      ),
     ),
     // elevated button them
     elevatedButtonTheme: ElevatedButtonThemeData(
@@ -77,7 +107,7 @@ ThemeData getApplicationTheme() {
       ),
       // used in google and facebook buttons
       bodySmall: getLightStyle(
-        color: ColorManager.grey,
+        color: ColorManager.grey1,
         fontSize: FontSize.s16,
       ),
       labelSmall: getRegularStyle(
@@ -95,7 +125,6 @@ ThemeData getApplicationTheme() {
       displayMedium: getBoldStyle(
         color: ColorManager.white,
         fontSize: FontSize.s25,
-
       ),
       titleLarge: getMediumStyle(
         color: ColorManager.simiBlack,

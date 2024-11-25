@@ -1,7 +1,16 @@
 
 const String imagePath = "assets/images";
-const String exercisesPath = 'assets/images/exercises';
+const String iconsPath = 'assets/icons';
 const String jsonPath = "assets/json";
+
+
+class IconsAssets{
+  static const  String home= '$iconsPath/home.svg';
+  static const  String notification= '$iconsPath/notification.svg';
+  static const  String profile= '$iconsPath/profile.svg';
+  static const  String products= '$iconsPath/products.svg';
+  }
+
 class ImageAssets{
   static const  String appLogo ="$imagePath/logo.svg";
   static const  String splash ="$imagePath/splash.png";
@@ -21,21 +30,7 @@ class ImageAssets{
   static const  String chat= '$imagePath/chat.svg';
   static const  String live= '$imagePath/live2.png';
   static const String image='$imagePath/image1.png';
-  static const String bentOverRow='$exercisesPath/bent_over_row.jpg';
-  static const String bicepsCurl='$exercisesPath/biceps_curl.jpg';
-  static const String deadliftToHigh='$exercisesPath/deadlift_to_high.jpg';
-  static const String rdlToHighPull='$exercisesPath/rdl_to_high_pull.jpg';
-  static const String singleArmHighPullLeft='$exercisesPath/single_arm_high_pull_left.jpg';
-  static const String squat='$exercisesPath/squat.jpg';
-  static const String squatLimitRom='$imagePath/squat_limit_rom.jpg';
 
-
-
-// static const String hollowCircleIc = "$imagePath/hollow_circle_ic.svg";
-  // static const String solidCircleIc = "$imagePath/solid_circle_ic.svg";
-  // static const String leftArrowIc = "$imagePath/left_arrow_ic.svg";
-  // static const String rightArrowIc = "$imagePath/right_arrow_ic.svg";
-  // static const String photoCameraIc = "$imagePath/photo-camera.svg";
 }
 class JsonAssets{
   static const  String loading ="$jsonPath/loading.json";
