@@ -36,21 +36,19 @@ class _BidPageViewState extends State<BidPageView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12.5),
-        child: PageView.builder(
-          controller: _pageController,
-          itemCount: 4,
-          itemBuilder: (context, index) {
-            double scale = _calculateScale(index);
-            double opacity = _calculateOpacity(scale);
-            return TransformingBidItem(
-              scale: scale,
-              opacity: opacity,
-            );
-          },
-        ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8),
+      child: PageView.builder(
+        controller: _pageController,
+        itemCount: 4,
+        itemBuilder: (context, index) {
+          double scale = _calculateScale(index);
+          double opacity = _calculateOpacity(scale);
+          return TransformingBidItem(
+            scale: scale,
+            opacity: opacity,
+          );
+        },
       ),
     );
   }

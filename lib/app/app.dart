@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:peakmart/app/resources/theme_manager.dart';
 import 'package:peakmart/features/main/main_view.dart';
 
 class MyApp extends StatelessWidget {
-  MyApp._internal();
+  const MyApp._internal();
 
-  static MyApp instance = MyApp._internal();
+  static MyApp instance = const MyApp._internal();
 
   factory MyApp() => instance;
 

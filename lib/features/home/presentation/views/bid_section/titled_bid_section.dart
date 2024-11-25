@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:peakmart/app/resources/app_stayles.dart';
+import 'package:peakmart/app/resources/color_manager.dart';
+import 'package:peakmart/app/resources/font_manager.dart';
+import 'package:peakmart/app/resources/style_manager.dart';
 import 'package:peakmart/features/home/presentation/views/bid_section/bid_page_view.dart';
 
 class TitledBidSection extends StatelessWidget {
@@ -12,12 +14,16 @@ class TitledBidSection extends StatelessWidget {
       children: [
         Text(
           title,
-          style: AppStayles.style31Bold,
+          style:
+              getBoldStyle(fontSize: FontSize.s28, color: ColorManager.primary),
         ),
         const SizedBox(
-          height: 25,
+          height: 12,
         ),
-        const SizedBox(height: 400, child: BidPageView()),
+        const SizedBox(
+          height: 400,
+          child: BidPageView(),
+        ),
       ],
     );
   }

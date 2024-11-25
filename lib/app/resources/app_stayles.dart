@@ -14,5 +14,5 @@ class AppStayles {
   static TextStyle style31Bold = TextStyle(
       fontSize: 31,
       fontWeight: FontWeightManager.bold,
-      color: ColorManager.primaryColor);
+      color: ColorManager.primary);
 }
