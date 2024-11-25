@@ -72,6 +72,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
           return GestureDetector(
             onTap: () => _onItemTapped(index),
             child: AnimatedContainer(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               duration: const Duration(milliseconds: 300),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
