@@ -14,8 +14,8 @@ class CustomBidItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        width: 250,
-        height: 385,
+        // width: 250,
+        // height: 385,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(25),
           border: Border.all(
