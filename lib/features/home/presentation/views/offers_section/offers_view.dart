@@ -16,7 +16,7 @@ class OfferSView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints:  BoxConstraints(maxHeight: 220.h,minWidth: double.infinity,minHeight: 170.h),
+      constraints:  BoxConstraints(maxHeight: 200.h,minWidth: double.infinity,minHeight: 170.h),
       child: Stack(
         children: [
           SizedBox(
