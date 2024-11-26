@@ -10,8 +10,8 @@ class PartnerCard extends StatelessWidget {
     return  Padding(
       padding: const  EdgeInsetsDirectional.only(start: AppPadding.p10),
       child: Container(
-        width: double.infinity,
-        height: 40,
+        width: 120,
+        height: 50,
         decoration:  BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           image: DecorationImage(

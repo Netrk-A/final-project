@@ -5,8 +5,9 @@ import 'package:peakmart/features/home/presentation/views/bid_section/bid_card_m
 
 class TransformingBidItem extends StatelessWidget {
   const TransformingBidItem(
-      {super.key, required this.scale, required this.opacity});
+      {super.key, required this.scale, required this.opacity, required this.bidCardModel});
   final double scale, opacity;
+  final BidCardModel bidCardModel;
   @override
   Widget build(BuildContext context) {
     return Transform.scale(
@@ -16,14 +17,14 @@ class TransformingBidItem extends StatelessWidget {
           Colors.black.withOpacity(opacity), // Apply opacity effect
           BlendMode.srcATop, // Use blend mode to apply the color filter
         ),
-        child: const Padding(
+        child:  Padding(
           padding:  EdgeInsets.only(right: AppPadding.p12),
           child:  CustomBidItem(
             bidCardModel: BidCardModel(
-              image: 'assets/images/card.png',
-              title: 'The Luxe Houndstooth Lounge Chair',
-              subTitle: 'Auction End Date: November 1, 2024',
-              price: 'Now Bid: \n\$250',
+              image: bidCardModel.image,
+              title: bidCardModel.title,
+              subTitle: bidCardModel.subTitle,
+              price: bidCardModel.price,
             ),
           ),
         ),

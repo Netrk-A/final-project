@@ -23,7 +23,7 @@ class MainView extends StatelessWidget {
   }
 
   Widget _buildBodyScreens(index) => [
-        const HomeView(),
+        HomeView(),
         Text('Products',
             style: getBoldStyle(color: ColorManager.primary, fontSize: 20)),
         Text('Notification',

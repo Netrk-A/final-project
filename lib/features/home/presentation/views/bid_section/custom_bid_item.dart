@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:peakmart/app/resources/color_manager.dart';
 import 'package:peakmart/app/resources/font_manager.dart';
 import 'package:peakmart/app/resources/style_manager.dart';
@@ -14,8 +15,6 @@ class CustomBidItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        // width: 250,
-        // height: 385,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(25),
           border: Border.all(
@@ -25,8 +24,9 @@ class CustomBidItem extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Image.asset(
+            SvgPicture.asset(
               bidCardModel.image,
+              height: 200,
               fit: BoxFit.cover,
             ),
             // CachedNetworkImage(
@@ -49,7 +49,7 @@ class CustomBidItem extends StatelessWidget {
                         color: ColorManager.black, fontSize: FontSize.s16),
                   ),
                   const SizedBox(
-                    height: 4,
+                    height: AppSize.s10,
                   ),
                   Text(
                     bidCardModel.subTitle,
@@ -57,7 +57,7 @@ class CustomBidItem extends StatelessWidget {
                         color: ColorManager.grey1, fontSize: FontSize.s12),
                   ),
                   const SizedBox(
-                    height: 4,
+                    height: AppSize.s10,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -67,7 +67,7 @@ class CustomBidItem extends StatelessWidget {
                         style: getSemiBoldStyle(
                             fontSize: FontSize.s12, color: ColorManager.black),
                       ),
-                      const CustomTextButton(buttonText: 'Enroll Now'),
+                       ElevatedButton(onPressed: () {}, child:const Text( 'Enroll Now')),
                     ],
                   ),
                 ],

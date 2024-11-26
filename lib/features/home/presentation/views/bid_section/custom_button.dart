@@ -12,12 +12,12 @@ class CustomTextButton extends StatelessWidget {
       onPressed: () {},
       child: Text(
         buttonText,
-        style: getBoldStyle(
-          fontSize: FontSize.s18,
-          color: ColorManager.white,
-        ).copyWith(
-          fontFamily: 'Montserrat',
-        ),
+        // style: getBoldStyle(
+        //   fontSize: FontSize.s18,
+        //   color: ColorManager.white,
+        // ).copyWith(
+        //   fontFamily: 'Montserrat',
+        // ),
       ),
     );
   }

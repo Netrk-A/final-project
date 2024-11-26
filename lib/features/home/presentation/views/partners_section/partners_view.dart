@@ -17,15 +17,16 @@ class PartnersView extends StatelessWidget {
           Text(
             'Trusted By 500+ Businesses',
             style:
-                getBoldStyle(fontSize: FontSize.s14, color: ColorManager.primary),
+                getBoldStyle(fontSize: FontSize.s16, color: ColorManager.primary),
           ),
-          const SizedBox(height: 10,),
+
           Text(
             'Explore on the world\' s best & largest Bidding marketplace with our beautiful Bidding products. We want to be a part of your smile, success and future growth',
-            style: getRegularStyle(fontSize: FontSize.s10, color: ColorManager.grey1),
+            style: getRegularStyle(fontSize: FontSize.s12, color: ColorManager.grey1),
             textAlign: TextAlign.center,
 
           ),
+          const SizedBox(height: 10,),
           const Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [

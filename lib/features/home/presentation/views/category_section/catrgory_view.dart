@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:peakmart/app/resources/color_manager.dart';
+import 'package:peakmart/app/resources/font_manager.dart';
+import 'package:peakmart/app/resources/style_manager.dart';
 
 import 'package:peakmart/features/home/domain/models/category_model.dart';
 import 'package:peakmart/features/home/presentation/views/category_section/category_item_widget.dart';
@@ -40,22 +43,34 @@ class _CategorySectionState extends State<CategorySection> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children: widget.categories.asMap().entries.map((category) {
-          return CategoryItemWidget(
-            category: category.value,
-            isSelected: isSelected[category.key],
-            onTap: () {
-              setState(() {
-                isSelected = List.generate(widget.categories.length, (index) => false);
-                isSelected[category.key] = true;
-              });
-            },
-          );
-        }).toList(),
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            "Categories",
+            style: getBoldStyle(fontSize: FontSize.s20, color: ColorManager.grey1),
+          ),
+        ),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: widget.categories.asMap().entries.map((category) {
+              return CategoryItemWidget(
+                category: category.value,
+                isSelected: isSelected[category.key],
+                onTap: () {
+                  setState(() {
+                    isSelected = List.generate(widget.categories.length, (index) => false);
+                    isSelected[category.key] = true;
+                  });
+                },
+              );
+            }).toList(),
+          ),
+        ),
+      ],
     );
   }
 }
