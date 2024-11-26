@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:peakmart/features/home/presentation/views/bid_section/titled_bid_section.dart';
+import 'package:peakmart/features/home/presentation/views/ended_bids_section/ended_bids_page_view.dart';
+import 'package:peakmart/features/home/presentation/views/ended_bids_section/titled_ended_bids.dart';
 import 'package:peakmart/features/home/presentation/views/landing_section/landing_view.dart';
 import 'package:peakmart/features/home/presentation/views/services_section/services_section.dart';
 
@@ -16,6 +19,11 @@ class HomeView extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: 16.0),
           child: ServicesSection(),
         ),
+        // TitledBidSection(title: 'Trending Bids'),
+        // TitledBidSection(title: 'Future Bids'),
+        TitledEndedBids(
+          title: 'Ended Bids',
+        )
       ],
     );
   }
