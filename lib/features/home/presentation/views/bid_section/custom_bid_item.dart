@@ -49,15 +49,15 @@ class CustomBidItem extends StatelessWidget {
                         color: ColorManager.black, fontSize: FontSize.s16),
                   ),
                   const SizedBox(
-                    height: 15,
+                    height: 4,
                   ),
                   Text(
                     bidCardModel.subTitle,
                     style: getMediumStyle(
-                        color: ColorManager.darkGrey, fontSize: FontSize.s12),
+                        color: ColorManager.grey1, fontSize: FontSize.s12),
                   ),
                   const SizedBox(
-                    height: 15,
+                    height: 4,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

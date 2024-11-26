@@ -1,3 +1,6 @@
+
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:peakmart/features/home/presentation/views/bid_section/transforming_bid_item.dart';
 
@@ -11,8 +14,9 @@ class BidPageView extends StatefulWidget {
 
 class _BidPageViewState extends State<BidPageView> {
   final PageController _pageController = PageController(viewportFraction: 0.65);
-  double _currentPage = 0;
-
+  double _currentPage = 1;
+  int page =1;
+  Timer? _timer;
   @override
   void initState() {
     super.initState();
@@ -21,8 +25,22 @@ class _BidPageViewState extends State<BidPageView> {
         _currentPage = _pageController.page!;
       });
     });
+    _startAutoScroll();
   }
-
+  void _startAutoScroll() {
+    _timer = Timer.periodic(Duration(seconds: 3), (timer) {
+      if (_currentPage < 3) {
+        page++;
+      } else {
+        page = 0; // Loop back to the first page
+      }
+      _pageController.animateToPage(
+        page,
+        duration: Duration(milliseconds: 500),
+        curve: Curves.linear,
+      );
+    });
+  }
   // Function to calculate the scale based on the current page and index
   double _calculateScale(int index) {
     double scale = (_currentPage - index).abs().clamp(0.0, 1.0);
@@ -33,12 +51,20 @@ class _BidPageViewState extends State<BidPageView> {
   double _calculateOpacity(double scale) {
     return scale > 0.8 ? 0 : 0.5; // Elements in the center are more visible
   }
+  @override
+  void dispose() {
+    _timer?.cancel();
+    _pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: PageView.builder(
+        reverse: true,
+        allowImplicitScrolling: true,
         controller: _pageController,
         itemCount: 4,
         itemBuilder: (context, index) {
