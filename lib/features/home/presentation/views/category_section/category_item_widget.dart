@@ -61,6 +61,6 @@ class CategoryItemWidget extends StatelessWidget {
         ),
       ),
     );
-    ;
+
   }
 }

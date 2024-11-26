@@ -8,7 +8,7 @@ class ColorManager {
   static Color white = const Color(0xffFFFFFF);
   static Color black = const Color(0xff000000);
   static Color grey1 =
-      const Color(0xff484C52); // this color for labels of bottom nav bar
+      const Color(0xff5C5C5C); // this color for labels of bottom nav bar
 
   static Color grey = const Color(0xffF8F8F8);
   static Color simiBlack = const Color(0xff101010);

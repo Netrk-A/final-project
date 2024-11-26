@@ -39,8 +39,8 @@ ThemeData getApplicationTheme() {
       elevation: AppSize.s4,
       color: ColorManager.darkPrimary,
       shadowColor: ColorManager.lightPrimary,
-      titleTextStyle: getRegularStyle(
-        fontSize: FontSize.s16,
+      titleTextStyle: getBoldStyle(
+        fontSize: FontSize.s28,
         color: ColorManager.white,
       ),
     ),
@@ -72,11 +72,12 @@ ThemeData getApplicationTheme() {
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         textStyle:
-            getRegularStyle(color: ColorManager.white, fontSize: FontSize.s17),
+            getBoldStyle(color: ColorManager.white, fontSize: FontSize.s16),
         backgroundColor: ColorManager.primary,
+        foregroundColor: ColorManager.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(
-            AppSize.s12,
+            AppSize.s10,
           ),
         ),
       ),

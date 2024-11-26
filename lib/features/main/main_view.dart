@@ -32,29 +32,34 @@ class MainView extends StatelessWidget {
             style: getBoldStyle(color: ColorManager.primary, fontSize: 20)),
       ][index];
 
+  Widget _buildAppBarTitle(int index) => [
+    const Text('Bids'),
+    const Text('Products'),
+    const Text('Notification'),
+    const Text('Profile'),
+  ][index];
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('bids'),
-      ),
-      body: StreamBuilder<int>(
-          stream: _viewModel.currentIndexOutput,
-          builder: (context, snapshot) {
-            return Center(
-              child: _buildBodyScreens(snapshot.data ?? 0),
-            );
-          }),
-      bottomNavigationBar: StreamBuilder<int>(
-          stream: _viewModel.currentIndexOutput,
-          builder: (context, snapshot) {
-            return CustomNavigationBar(
-              items: _navBarItems,
-              initialIndex: snapshot.data ?? 0,
-              onTap: _onNavItemTapped,
-              indicatorHeight: 6,
-            );
-          }),
+    return StreamBuilder<int>(
+      stream: _viewModel.currentIndexOutput,
+      builder: (context, snapshot) {
+        int currentIndex = snapshot.data ?? 0;
+        return Scaffold(
+          appBar: AppBar(
+            title: _buildAppBarTitle(currentIndex),
+          ),
+          body: Center(
+            child: _buildBodyScreens(snapshot.data ?? 0),
+          ),
+          bottomNavigationBar: CustomNavigationBar(
+            items: _navBarItems,
+            initialIndex: currentIndex,
+            onTap: _onNavItemTapped,
+            indicatorHeight: 6,
+          ),
+        );
+      }
     );
   }
 }
