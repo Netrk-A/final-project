@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:peakmart/features/home/presentation/views/apply_section/apply_view.dart';
 import 'package:peakmart/features/home/presentation/views/bid_section/titled_bid_section.dart';
 import 'package:peakmart/features/home/presentation/views/category_section/catrgory_view.dart';
+import 'package:peakmart/features/home/presentation/views/ended_bids_section/titled_ended_bids.dart';
 import 'package:peakmart/features/home/presentation/views/landing_section/landing_view.dart';
 import 'package:peakmart/features/home/presentation/views/offers_section/offers_view.dart';
 import 'package:peakmart/features/home/presentation/views/partners_section/partners_view.dart';
@@ -30,7 +31,7 @@ class HomeView extends StatelessWidget {
         CategorySection(),
         const SizedBox(height: 10.0),
         const TitledBidSection(title: 'Bids WorkNow'),
-        const TitledBidSection(title: 'Ended Bids'),
+        const TitledEndedBids(title: 'Ended Bids'),
         const ApplyView(),
         const PartnersView()
       ],
