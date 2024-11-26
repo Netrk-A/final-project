@@ -11,13 +11,14 @@ class ItemService extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 251,
+      height: 160,
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20), // زوايا دائرية
         ),
-        elevation: 6, // تأثير ظل خفيف
+        elevation: 30, // تأثير ظل خفيف
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0), // مسافات داخل الكارد
+          padding: const EdgeInsets.all(12.0), // مسافات داخل الكارد
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -30,19 +31,21 @@ class ItemService extends StatelessWidget {
                     Text(
                       itemServiceModel.title,
                       style: getSemiBoldStyle(
-                        fontSize: FontSize.s14,
+                        fontSize: FontSize.s12,
                         color: Colors.black,
                       ),
                     ),
-                    const SizedBox(height: 4), // تقليل المسافة بين العنوان والوصف
+                    const SizedBox(
+                        height: 4), // تقليل المسافة بين العنوان والوصف
                     Text(
                       itemServiceModel.description,
                       style: getMediumStyle(
-                        fontSize: FontSize.s10,
-                        color: Colors.grey.shade600,
+                        fontSize: FontSize.s8,
+                        color: Colors.black,
                       ),
                       maxLines: 3,
-                      overflow: TextOverflow.ellipsis,
+                      overflow:
+                          TextOverflow.ellipsis, // تقصير النص إذا كان طويلاً
                     ),
                   ],
                 ),
@@ -52,10 +55,10 @@ class ItemService extends StatelessWidget {
                 flex: 1,
                 child: Image.asset(
                   itemServiceModel.image,
-                  height: 60,
-                  width: 60,
-                  fit: BoxFit.contain,
-                  alignment: Alignment.topRight, // محاذاة الصورة إلى الأعلى
+                  height: 200, // ضبط أبعاد الصورة
+                  width: 100,
+                  fit: BoxFit.contain, // لتناسب الصورة داخل الإطار
+                  alignment: Alignment.center, // محاذاة الصورة إلى الأعلى
                 ),
               ),
             ],
