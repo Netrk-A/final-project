@@ -8,17 +8,21 @@ class ServicesSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 100,
+      height: 140,
       child: ListView.builder(
-        itemCount: 4,
         scrollDirection: Axis.horizontal,
+        itemCount: 4,
         itemBuilder: (context, index) {
-          return const ItemService(
-            itemServiceModel: ItemServiceModel(
+          return const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8.0),
+            child: ItemService(
+              itemServiceModel: ItemServiceModel(
                 title: 'Product delivery',
                 description:
                     'You can choose to pay easily via PeakMart’s digital wallet, credit cards, in installments or by cash.',
-                image: 'assets/images/Credit_Card.png'),
+                image: 'assets/images/Credit_Card.png',
+              ),
+            ),
           );
         },
       ),

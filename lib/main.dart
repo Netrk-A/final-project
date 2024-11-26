@@ -3,5 +3,4 @@ import 'package:peakmart/app/app.dart';
 
 void main() {
   runApp(MyApp());
-
 }

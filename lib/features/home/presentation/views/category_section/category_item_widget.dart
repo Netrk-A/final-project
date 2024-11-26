@@ -7,7 +7,7 @@ import 'package:peakmart/app/resources/values_manager.dart';
 import 'package:peakmart/features/home/domain/models/category_model.dart';
 
 class CategoryItemWidget extends StatelessWidget {
-  CategoryItemWidget(
+  const CategoryItemWidget(
       {super.key,
       required this.category,
       required this.onTap,
@@ -61,6 +61,5 @@ class CategoryItemWidget extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }
