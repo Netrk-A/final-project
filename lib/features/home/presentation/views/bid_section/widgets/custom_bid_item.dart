@@ -1,33 +1,44 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:peakmart/app/resources/color_manager.dart';
 import 'package:peakmart/app/resources/font_manager.dart';
 import 'package:peakmart/app/resources/style_manager.dart';
 import 'package:peakmart/features/home/presentation/views/bid_section/bid_card_model.dart';
-import 'package:peakmart/features/home/presentation/views/bid_section/custom_button.dart';
 
-import '../../../../../app/resources/values_manager.dart';
+import '../../../../../../app/resources/values_manager.dart';
 
 class CustomBidItem extends StatelessWidget {
-  const CustomBidItem({super.key, required this.bidCardModel});
+  const CustomBidItem({super.key, required this.bidCardModel,});
   final BidCardModel bidCardModel;
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Container(
+        clipBehavior: Clip.antiAliasWithSaveLayer,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(25),
           border: Border.all(
             color: ColorManager.primary,
+            width: 2,
           ),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SvgPicture.asset(
-              bidCardModel.image,
-              height: 200,
-              fit: BoxFit.cover,
+            Expanded(
+              child: Container(
+                clipBehavior: Clip.antiAliasWithSaveLayer,
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(23),
+                    topRight: Radius.circular(23),
+                  ),
+                ),
+                child: Image.asset(
+                  bidCardModel.image,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
             // CachedNetworkImage(
             //   imageUrl:
@@ -45,6 +56,7 @@ class CustomBidItem extends StatelessWidget {
                 children: [
                   Text(
                     bidCardModel.title,
+                    maxLines: 2,
                     style: getSemiBoldStyle(
                         color: ColorManager.black, fontSize: FontSize.s16),
                   ),
@@ -54,7 +66,7 @@ class CustomBidItem extends StatelessWidget {
                   Text(
                     bidCardModel.subTitle,
                     style: getMediumStyle(
-                        color: ColorManager.grey1, fontSize: FontSize.s12),
+                        color: ColorManager.grey1, fontSize: FontSize.s12).copyWith(fontFamily: FontConstants.fontCabinFamily),
                   ),
                   const SizedBox(
                     height: AppSize.s10,
@@ -69,6 +81,9 @@ class CustomBidItem extends StatelessWidget {
                       ),
                        ElevatedButton(onPressed: () {}, child:const Text( 'Enroll Now')),
                     ],
+                  ),
+                  const SizedBox(
+                    height: AppSize.s10,
                   ),
                 ],
               ),

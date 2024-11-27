@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:peakmart/app/resources/style_manager.dart';
 
 class CustomNavigationBar extends StatefulWidget {
@@ -80,7 +81,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
                   AnimatedContainer(
                     duration: const Duration(milliseconds: 300),
                     height: isSelected ? widget.indicatorHeight : 0,
-                    width: isSelected ? 70 : 0,
+                    width: isSelected ? 65.w : 0,
                     margin: const EdgeInsets.symmetric(horizontal: 5),
                     decoration: BoxDecoration(
                       color: selectedColor,

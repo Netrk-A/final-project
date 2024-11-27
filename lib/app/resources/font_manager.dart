@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FontConstants {
-  // static const String fontCabinFamily = "Cabin";
+  static const String fontCabinFamily = "Cabin";
   static const String fontMontserratFamily = "Montserrat";
 }
 

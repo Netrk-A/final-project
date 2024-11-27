@@ -13,8 +13,8 @@ class ServicesSection extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: 4,
         itemBuilder: (context, index) {
-          return const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8.0),
+          return const  Padding(
+            padding: EdgeInsetsDirectional.only(start: 12.0),
             child: ItemService(
               itemServiceModel: ItemServiceModel(
                 title: 'Product delivery',

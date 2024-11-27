@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:peakmart/app/resources/values_manager.dart';
 import 'package:peakmart/features/home/presentation/views/apply_section/apply_view.dart';
 import 'package:peakmart/features/home/presentation/views/bid_section/bid_card_model.dart';
 import 'package:peakmart/features/home/presentation/views/bid_section/titled_bid_section.dart';
 import 'package:peakmart/features/home/presentation/views/category_section/catrgory_view.dart';
-import 'package:peakmart/features/home/presentation/views/ended_bids_section/titled_ended_bids.dart';
 import 'package:peakmart/features/home/presentation/views/landing_section/landing_view.dart';
 import 'package:peakmart/features/home/presentation/views/offers_section/offers_view.dart';
 import 'package:peakmart/features/home/presentation/views/partners_section/partners_view.dart';
@@ -17,39 +17,39 @@ class HomeView extends StatelessWidget {
   final List<BidCardModel> bids = [
     BidCardModel(
       title: 'The Luxe Houndstooth Lounge Chair',
-      image: 'assets/images/card_image.svg',
+      image: 'assets/images/card.png',
       subTitle: 'Auction End Date: November 1, 2024',
       price: 'Now Bid: \n\$250',
     ),
     BidCardModel(
       title: 'The Luxe Houndstooth Lounge Chair',
-      image: 'assets/images/card_image.svg',
+      image: 'assets/images/card.png',
       subTitle: 'Auction End Date: November 1, 2024',
-      price: 'Now Bid: \n\$250',
+      price: 'Now Bid: \n\$300',
     ),
     BidCardModel(
       title: 'The Luxe Houndstooth Lounge Chair',
-      image: 'assets/images/card_image.svg',
+      image: 'assets/images/card.png',
       subTitle: 'Auction End Date: November 1, 2024',
-      price: 'Now Bid: \n\$250',
+      price: 'Now Bid: \n\$350',
     ),
     BidCardModel(
       title: 'The Luxe Houndstooth Lounge Chair',
-      image: 'assets/images/card_image.svg',
+      image: 'assets/images/card.png',
       subTitle: 'Auction End Date: November 1, 2024',
-      price: 'Now Bid: \n\$2880',
+      price: 'Now Bid: \n\$400',
     ),
     BidCardModel(
       title: 'The Luxe Houndstooth Lounge Chair',
-      image: 'assets/images/card_image.svg',
+      image: 'assets/images/card.png',
       subTitle: 'Auction End Date: November 1, 2024',
-      price: 'Now Bid: \n\$2350',
+      price: 'Now Bid: \n\$450',
     ),
     BidCardModel(
       title: 'The Luxe Houndstooth Lounge Chair',
-      image: 'assets/images/card_image.svg',
+      image: 'assets/images/card.png',
       subTitle: 'Auction End Date: November 1, 2024',
-      price: 'Now Bid: \n\$200',
+      price: 'Now Bid: \n\$500',
     ),
   ];
 
@@ -58,24 +58,55 @@ class HomeView extends StatelessWidget {
     return ListView(
       children: [
         const LandingView(),
-        const Padding(
-          padding: EdgeInsets.only(bottom: 16.0),
-          child: ServicesSection(),
-        ),
-         TitledBidSection(
+        const ServicesSection(),
+        // const SizedBox(
+        //   height: AppSize.s12,
+        // ),
+        TitledBidSection(
           title: 'Top Bids',
           bids: bids,
         ),
-         TitledBidSection(title: 'Future Bids',bids: bids,),
-        const SizedBox(height: 10.0),
+        const SizedBox(
+          height: AppSize.s12,
+        ),
+        TitledBidSection(
+          title: 'Future Bids',
+          bids: bids,
+        ),
+        const SizedBox(
+          height: AppSize.s12,
+        ),
         const OfferSView(),
-        const SizedBox(height: 10.0),
+        const SizedBox(
+          height: AppSize.s12,
+        ),
         CategorySection(),
-        const SizedBox(height: 10.0),
-         TitledBidSection(title: 'Bids WorkNow',bids: bids,),
-        const TitledEndedBids(title: 'Ended Bids'),
+        const SizedBox(
+          height: AppSize.s12,
+        ),
+        TitledBidSection(
+          title: 'Bids WorkNow',
+          bids: bids,
+        ),
+        const SizedBox(
+          height: AppSize.s12,
+        ),
+        TitledBidSection(
+          title: 'Ended Bids',
+          bids: bids,
+          isEnded: true,
+        ),
+        const SizedBox(
+          height: AppSize.s12,
+        ),
         const ApplyView(),
-        const PartnersView()
+        const SizedBox(
+          height: AppSize.s12,
+        ),
+        const PartnersView(),
+        const SizedBox(
+          height: AppSize.s12,
+        ),
       ],
     );
   }

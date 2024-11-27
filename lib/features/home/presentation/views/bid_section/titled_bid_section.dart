@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:peakmart/app/resources/color_manager.dart';
 import 'package:peakmart/app/resources/font_manager.dart';
 import 'package:peakmart/app/resources/style_manager.dart';
+import 'package:peakmart/app/resources/values_manager.dart';
 import 'package:peakmart/features/home/presentation/views/bid_section/bid_card_model.dart';
 import 'package:peakmart/features/home/presentation/views/bid_section/bid_page_view.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 class TitledBidSection extends StatelessWidget {
   const TitledBidSection({super.key, required this.title,required this.bids, this.isEnded=false});
   final String title;
@@ -21,11 +22,11 @@ class TitledBidSection extends StatelessWidget {
               getBoldStyle(fontSize: FontSize.s28, color: ColorManager.primary),
         ),
         const SizedBox(
-          height: 12,
+          height:AppSize.s12,
         ),
          SizedBox(
-           height: 410,
-             child: BidPageView(bidCards: bids,)),
+           height: 370.h,
+             child: BidPageView(bidCards: bids,isEnded: isEnded,)),
       ],
     );
   }

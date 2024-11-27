@@ -39,6 +39,7 @@ dependencies:
   flutter_svg: ^2.0.15
   flutter_native_splash: ^2.4.3
   cached_network_image: ^3.4.1
+  loop_page_view: ^1.2.5
 
 dev_dependencies:
   flutter_test:
