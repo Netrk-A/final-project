@@ -30,7 +30,6 @@ class _BidPageViewState extends State<BidPageView> {
     _pageController.addListener(
       () => setState(() {
         page = _pageController.page;
-        print(page);
       }),
     );
     _startAutoScroll();
@@ -38,28 +37,38 @@ class _BidPageViewState extends State<BidPageView> {
 
   void _startAutoScroll() {
     _timer = Timer.periodic(const Duration(seconds: 2), (timer) {
-      if (page < widget.bidCards.length - 1) {
-        page++;
-      } else {
-        page = 0; // Loop back to the first page
-      }
       _pageController.animateToPage(
-        page.toInt(),
+        page.toInt()+1,
         duration: const Duration(milliseconds: 500),
-        curve: Curves.linear,
+        curve: Curves.linear
       );
     });
   }
 
-  // Function to calculate the scale based on the current page and index
   double _calculateScale(int index) {
-    double scale = (page - index).abs().clamp(0.0, 1.0).toDouble();
+    // Normalize the index to the looping range based on the current page
+    double currentPage = page; // Fallback to `page` if null
+    int itemCount = widget.bidCards.length;
+
+    // Calculate the normalized difference considering the looping
+    double normalizedIndex = (index - currentPage) % itemCount;
+    if (normalizedIndex < -0.5) normalizedIndex += itemCount; // Correct for negative wrapping
+    if (normalizedIndex > 0.5) normalizedIndex -= itemCount; // Correct for positive wrapping
+
+    // Calculate scale based on normalizedIndex
+    double scale = normalizedIndex.abs().clamp(0.0, 1.0).toDouble();
     return 1 - (scale * 0.2); // Gradual scale decrease
   }
 
+
+
   // Function to calculate the opacity based on the scale
-  double _calculateOpacity(double scale) {
-    return scale > 0.8 ? 0 : 0.5; // Elements in the center are more visible
+  double _calculateOpacity(int index) {
+    // Calculate the distance from the current page
+    double distance = (page - index).abs();
+
+    // Use a smooth fade effect where opacity decreases with distance
+    return  (distance.clamp(0.0, 1.0) * 0.5);
   }
 
   @override
@@ -71,22 +80,48 @@ class _BidPageViewState extends State<BidPageView> {
 
   @override
   Widget build(BuildContext context) {
-    return LoopPageView.builder(
-      controller: _pageController,
-      itemCount: widget.bidCards.length,
-      itemBuilder: (context, index) {
-        double scale = _calculateScale(index);
-        double opacity = _calculateOpacity(scale);
-        return Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: TransformingBidItem(
-            scale: scale,
-            opacity: opacity,
-            bidCardModel: widget.bidCards[index],
-            isEnded: widget.isEnded,
-          ),
-        );
+    return Listener(
+      onPointerDown: (_) {
+        // Pause the timer when user interacts with the slider
+        _pauseAutoScroll();
       },
+      onPointerUp: (_) {
+        // Resume the timer after a delay when user stops interacting
+        _resumeAutoScroll();
+      },
+      child: LoopPageView.builder(
+        controller: _pageController,
+        itemCount: widget.bidCards.length,
+        itemBuilder: (context, index) {
+          double scale = _calculateScale(index);
+          double opacity = _calculateOpacity(index);
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TransformingBidItem(
+              scale: scale,
+              opacity: opacity,
+              bidCardModel: widget.bidCards[index],
+              isEnded: widget.isEnded,
+            ),
+          );
+        },
+      ),
     );
   }
+
+
+  void _pauseAutoScroll() {
+    _timer?.cancel(); // Cancel the current timer
+    _timer = null;
+  }
+
+  void _resumeAutoScroll() {
+    // Start the timer after a short delay to avoid immediate scrolling
+    Future.delayed(const Duration(seconds: 2), () {
+      if (_timer == null) {
+        _startAutoScroll();
+      }
+    });
+  }
+
 }

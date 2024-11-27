@@ -11,7 +11,7 @@ class ItemService extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 251,
-      height: 160,
+      height: 170,
       child: Padding(
         padding: const EdgeInsets.only(bottom: 15.0),
         child: Card(
@@ -58,7 +58,6 @@ class ItemService extends StatelessWidget {
                   child: Image.asset(
                     itemServiceModel.image,
                     height: 200, // ضبط أبعاد الصورة
-                    width: 100,
                     fit: BoxFit.contain, // لتناسب الصورة داخل الإطار
                     alignment: Alignment.center, // محاذاة الصورة إلى الأعلى
                   ),
