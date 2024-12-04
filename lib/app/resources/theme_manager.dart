@@ -17,7 +17,7 @@ ThemeData getApplicationTheme() {
 
     //color
     colorScheme: ColorScheme(
-      brightness: Brightness.light,
+      brightness: Brightness.dark,
       primary: ColorManager.primary,
       onPrimary: ColorManager.lightPrimary,
       secondary: ColorManager.darkPrimary,

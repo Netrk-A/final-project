@@ -3,10 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:loop_page_view/loop_page_view.dart';
 import 'package:peakmart/features/home/presentation/views/bid_section/bid_card_model.dart';
-import 'package:peakmart/features/home/presentation/views/bid_section/ended_bids_card_model.dart';
-import 'package:peakmart/features/home/presentation/views/bid_section/widgets/custom_bid_item.dart';
 import 'package:peakmart/features/home/presentation/views/bid_section/transforming_bid_item.dart';
-import 'package:peakmart/features/home/presentation/views/bid_section/widgets/custom_ended_bids_item.dart';
 
 class BidPageView extends StatefulWidget {
   const BidPageView({super.key, required this.bidCards, this.isEnded = false});
@@ -82,7 +79,6 @@ class _BidPageViewState extends State<BidPageView> {
   Widget build(BuildContext context) {
     return Listener(
       onPointerDown: (_) {
-        // Pause the timer when user interacts with the slider
         _pauseAutoScroll();
       },
       onPointerUp: (_) {

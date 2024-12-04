@@ -40,6 +40,10 @@ dependencies:
   flutter_native_splash: ^2.4.3
   cached_network_image: ^3.4.1
   loop_page_view: ^1.2.5
+  flutter_svg_provider: ^1.0.7
+  animate_do: ^3.3.4
+  flutter_bloc: ^8.1.6
+  text_scroll: ^0.2.0
 
 dev_dependencies:
   flutter_test:
