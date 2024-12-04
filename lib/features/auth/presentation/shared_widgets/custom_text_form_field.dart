@@ -34,27 +34,27 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         return null;
       },
       decoration: InputDecoration(
-          contentPadding: const EdgeInsets.all(22),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-            borderSide: const BorderSide(color: Color(0xffA8A8A9)),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-            borderSide: const BorderSide(color: Color(0xffA8A8A9)),
-          ),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-            borderSide: const BorderSide(color: Color(0xffA8A8A9)),
-          ),
+          // contentPadding: const EdgeInsets.all(22),
+          // focusedBorder: OutlineInputBorder(
+          //   borderRadius: BorderRadius.circular(10),
+          //   borderSide: const BorderSide(color: Color(0xffA8A8A9)),
+          // ),
+          // enabledBorder: OutlineInputBorder(
+          //   borderRadius: BorderRadius.circular(10),
+          //   borderSide: const BorderSide(color: Color(0xffA8A8A9)),
+          // ),
+          // border: OutlineInputBorder(
+          //   borderRadius: BorderRadius.circular(10),
+          //   borderSide: const BorderSide(color: Color(0xffA8A8A9)),
+          // ),
           labelText: widget.labelText,
-          labelStyle:
-              getMediumStyle(fontSize: FontSize.s14, color: ColorManager.black)
-                  .copyWith(fontFamily: FontConstants.fontMontserratFamily),
-          hintStyle: getMediumStyle(
-                  fontSize: FontSize.s12, color: ColorManager.lightGrey)
-              .copyWith(fontFamily: FontConstants.fontMontserratFamily),
-          hintText: widget.hintText,
+          // labelStyle:
+          //     getMediumStyle(fontSize: FontSize.s14, color: ColorManager.black)
+          //         .copyWith(fontFamily: FontConstants.fontMontserratFamily),
+          // hintStyle: getMediumStyle(
+          //         fontSize: FontSize.s12, color: ColorManager.lightGrey)
+          //     .copyWith(fontFamily: FontConstants.fontMontserratFamily),
+          // hintText: widget.hintText,
           prefixIconColor: ColorManager.lightGrey,
           prefixIcon: Padding(
             padding: const EdgeInsets.only(left: 5.0),
@@ -69,10 +69,10 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                   child: IconButton(
                     icon: isPressed
                         ? const Icon(
-                            Icons.visibility,
+                            Icons.remove_red_eye_outlined,
                           )
                         : const Icon(
-                            Icons.visibility_off,
+                            Icons.remove_red_eye_outlined,
                           ),
                     onPressed: () {
                       setState(() {

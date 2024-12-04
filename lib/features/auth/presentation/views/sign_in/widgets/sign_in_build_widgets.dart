@@ -56,7 +56,7 @@ class _SignInBuildWidgetsState extends State<SignInBuildWidgets> {
           ),
            CustomElevatedButton(
             textButton: 'Login',onPressed: () {
-              Navigator.pushNamed(context, Routes.homeScreen);
+              Navigator.pushNamed(context, Routes.mainScreen);
             },
           ),
           SizedBox(

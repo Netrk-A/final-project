@@ -13,7 +13,8 @@ class CustomOtpTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return OtpTextField(
       focusedBorderColor: ColorManager.primary,
-      numberOfFields: 4, fieldHeight: 75,
+      numberOfFields: 4,
+      fieldHeight: 75,
       fieldWidth: MediaQuery.of(context).size.width * .18,
       borderRadius: BorderRadius.circular(12),
       borderColor: ColorManager.grey,
@@ -26,21 +27,23 @@ class CustomOtpTextField extends StatelessWidget {
       },
       //runs when every textfield is filled
       onSubmit: (String verificationCode) {
-        showDialog(
-            context: context,
-            builder: (context) {
-              return AlertDialog(
-                  title: Text(
-                    "Verification Code",
-                    style: getRegularStyle(
-                        fontSize: FontSize.s24, color: ColorManager.black),
-                  ),
-                  content: Text(
-                    'Code entered is $verificationCode',
-                    style: getRegularStyle(
-                        fontSize: FontSize.s18, color: ColorManager.black),
-                  ));
-            });
+        Navigator.push(context, MaterialPageRoute(builder: (context) => const Text("Done")));
+        // showDialog(
+        //   context: context,
+        //   builder: (context) {
+        //     return AlertDialog(
+        //         title: Text(
+        //           "Verification Code",
+        //           style: getRegularStyle(
+        //               fontSize: FontSize.s24, color: ColorManager.black),
+        //         ),
+        //         content: Text(
+        //           'Code entered is $verificationCode',
+        //           style: getRegularStyle(
+        //               fontSize: FontSize.s18, color: ColorManager.black),
+        //         ));
+        //   },
+        // );
       }, // end onSubmit
     );
   }

@@ -33,7 +33,7 @@ class _BidPageViewState extends State<BidPageView> {
   }
 
   void _startAutoScroll() {
-    _timer = Timer.periodic(const Duration(seconds: 2), (timer) {
+    _timer = Timer.periodic(const Duration(seconds: 7), (timer) {
       _pageController.animateToPage(
         page.toInt()+1,
         duration: const Duration(milliseconds: 500),

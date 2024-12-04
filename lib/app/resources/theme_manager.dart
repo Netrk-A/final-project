@@ -82,6 +82,16 @@ ThemeData getApplicationTheme() {
         ),
       ),
     ),
+    textButtonTheme: TextButtonThemeData(
+      style: TextButton.styleFrom(
+        textStyle:
+        getRegularStyle(
+            fontSize: FontSize.s14, color: ColorManager.primary)
+            .copyWith(
+          fontFamily: 'Montserrat',
+        ),
+      ),
+    ),
     //text theme
     textTheme: TextTheme(
       displayLarge: getLightStyle(
@@ -159,7 +169,7 @@ ThemeData getApplicationTheme() {
       ),
       //label style
       labelStyle: getMediumStyle(
-        color: ColorManager.simiBlue,
+        color: ColorManager.grey1,
         fontSize: FontSize.s14,
       ),
       fillColor: ColorManager.grey,
@@ -167,7 +177,8 @@ ThemeData getApplicationTheme() {
       //enable border style
       enabledBorder: OutlineInputBorder(
         borderSide: BorderSide(
-          color: ColorManager.grey,
+          color: ColorManager.textFormBorder,
+          width: AppSize.s1_5,
         ),
         borderRadius: BorderRadius.circular(
           AppSize.s12,
@@ -180,7 +191,7 @@ ThemeData getApplicationTheme() {
           AppSize.s12,
         ),
         borderSide: BorderSide(
-          color: ColorManager.textFormEnabledBorder,
+          color: ColorManager.primary,
           width: AppSize.s1_5,
         ),
       ),
@@ -202,7 +213,7 @@ ThemeData getApplicationTheme() {
           AppSize.s12,
         ),
         borderSide: BorderSide(
-          color: ColorManager.textFormEnabledBorder,
+          color: ColorManager.primary,
           width: AppSize.s1_5,
         ),
       ),

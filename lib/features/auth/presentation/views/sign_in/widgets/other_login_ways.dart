@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:peakmart/app/resources/assets_manager.dart';
@@ -20,12 +22,13 @@ class OtherLoginWays extends StatelessWidget {
              OtherLoginMethodsShape(
               icon: IconsAssets.googleIcon,
             ),
+             Platform.isIOS ?
              OtherLoginMethodsShape(
               icon: IconsAssets.appleIcon,
-            ),
-            OtherLoginMethodsShape(
-              icon: IconsAssets.facebookIcon,
-            ),
+            ):SizedBox(),
+            // OtherLoginMethodsShape(
+            //   icon: IconsAssets.facebookIcon,
+            // ),
           ],
         )
       ],

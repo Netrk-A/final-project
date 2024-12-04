@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:peakmart/app/resources/routes_manager.dart';
 import 'package:peakmart/app/resources/theme_manager.dart';
 import 'package:peakmart/features/main/main_view.dart';
 
@@ -22,7 +23,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: getApplicationTheme(),
         title: 'Petmart',
-        home: MainView(),
+        initialRoute: Routes.signInScreen,
+        onGenerateRoute:RouteGenerator.getRoute,
       ),
     );
   }

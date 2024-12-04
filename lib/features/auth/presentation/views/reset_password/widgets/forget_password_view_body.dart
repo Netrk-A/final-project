@@ -18,6 +18,8 @@ class ForgetPasswordViewBody extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          Spacer(
+            flex: 1,),
           const CustomTextFormField(
               labelText: 'Phone number',
               hintText: 'Phone number',
@@ -42,17 +44,18 @@ class ForgetPasswordViewBody extends StatelessWidget {
               )
             ]),
           ),
-          const Spacer(
-            flex: 1,
-          ),
+         const SizedBox(
+            height: 100,
+         ),
           CustomElevatedButton(
             textButton: 'Submit',
             onPressed: () {
               Navigator.pushNamed(context, Routes.otpVerification);
             },
+
           ),
-          const Spacer(
-            flex: 3,
+          Spacer(
+
           ),
         ],
       ),

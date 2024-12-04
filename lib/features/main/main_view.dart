@@ -45,18 +45,20 @@ class MainView extends StatelessWidget {
       stream: _viewModel.currentIndexOutput,
       builder: (context, snapshot) {
         int currentIndex = snapshot.data ?? 0;
-        return Scaffold(
-          appBar: AppBar(
-            title: _buildAppBarTitle(currentIndex),
-          ),
-          body: Center(
-            child: _buildBodyScreens(snapshot.data ?? 0),
-          ),
-          bottomNavigationBar: CustomNavigationBar(
-            items: _navBarItems,
-            initialIndex: currentIndex,
-            onTap: _onNavItemTapped,
-            indicatorHeight: 6,
+        return SafeArea(
+          child: Scaffold(
+            appBar:currentIndex == 0? null : AppBar(
+              title: _buildAppBarTitle(currentIndex),
+            ),
+            body: Center(
+              child: _buildBodyScreens(snapshot.data ?? 0),
+            ),
+            bottomNavigationBar: CustomNavigationBar(
+              items: _navBarItems,
+              initialIndex: currentIndex,
+              onTap: _onNavItemTapped,
+              indicatorHeight: 6,
+            ),
           ),
         );
       }

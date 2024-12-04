@@ -9,7 +9,7 @@ class SignInView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorManager.white,
-      body: const SignInViewBody(),
+      body: Center(child: const SignInViewBody()),
     );
   }
 }

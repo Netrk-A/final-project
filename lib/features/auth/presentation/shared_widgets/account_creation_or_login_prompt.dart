@@ -30,11 +30,12 @@ class AccountCreationOrLoginPrompt extends StatelessWidget {
           },
           child: Text(
             textButton,
-            style: TextStyle(
-                decoration: TextDecoration.underline,
-                fontSize: FontSize.s15,
-                color: ColorManager.primary,
-                fontFamily: FontConstants.fontMontserratFamily),
+            style: getBoldStyle(
+                fontSize: FontSize.s14,
+                color: ColorManager.primary,).copyWith(
+              decoration: TextDecoration.underline,
+              // fontFamily: FontConstants.fontMontserratFamily
+            )
           ),
         ),
       ],

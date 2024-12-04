@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:peakmart/app/resources/color_manager.dart';
 
 class OtherLoginMethodsShape extends StatelessWidget {
@@ -21,7 +22,9 @@ class OtherLoginMethodsShape extends StatelessWidget {
             radius: 30,
             backgroundColor: const Color(0xffFCF3F6),
             child: Center(
-              child: Image.asset(icon),
+              child: SvgPicture.asset(icon,
+
+              ),
             ),
           ),
         ),

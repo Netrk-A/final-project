@@ -59,15 +59,16 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(MediaQuery.of(context).size.width);
     return Stack(
       children: [
+
         ListView(
             children: [
+              const SizedBox(
+                height: AppSize.s40,),
               const LandingView(),
               const ServicesSection(),
-              // const SizedBox(
-              //   height: AppSize.s12,
-              // ),
               TitledBidSection(
                 title: 'Top Bids',
                 bids: bids,
@@ -118,6 +119,7 @@ class HomeView extends StatelessWidget {
           create: (_) => NewsCubit()..fetchNews(),
           child: BlocBuilder<NewsCubit, NewsState>(
             builder: (context, state) {
+              print(state);
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [

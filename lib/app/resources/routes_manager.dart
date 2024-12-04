@@ -19,16 +19,18 @@
 //
 import 'package:flutter/material.dart';
 import 'package:peakmart/app/resources/string_manager.dart';
+import 'package:peakmart/features/auth/presentation/views/reset_password/change_password.dart';
 import 'package:peakmart/features/auth/presentation/views/reset_password/forget_password_view.dart';
 import 'package:peakmart/features/auth/presentation/views/otp_verification/otp_verification.dart';
 import 'package:peakmart/features/auth/presentation/views/sign_in/sign_in_view.dart';
 import 'package:peakmart/features/auth/presentation/views/sign_up/sign_up_view.dart';
+import 'package:peakmart/features/main/main_view.dart';
 
 import '../../features/home/presentation/views/home_view.dart';
 
 class Routes {
   static const String splashScreen = "/";
-  static const String homeScreen="/homeScreen";
+  static const String mainScreen="/mainScreen";
   static const String signInScreen = "/signInScreen";
   static const String signUpScreen = "/signUpScreen";
   static const String forgetPasswordScreen = "/forgetPasswordScreen";
@@ -39,8 +41,8 @@ class RouteGenerator {
   static Route<dynamic> getRoute(RouteSettings settings) {
     switch (settings.name) {
 
-      case Routes.homeScreen:
-        return MaterialPageRoute(builder: (_) =>  HomeView());
+      case Routes.mainScreen:
+        return MaterialPageRoute(builder: (_) =>  MainView());
       case Routes.signInScreen:
         return MaterialPageRoute(builder: (_) => const SignInView());
       case Routes.signUpScreen:
@@ -49,7 +51,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const ForgetPasswordView());
       case Routes.otpVerification:
         return MaterialPageRoute(builder: (_) => const OtpVerification());
-
+      case ChangePasswordView.routeName:
+        return MaterialPageRoute(builder: (_) => const ChangePasswordView());
       default:
         return unDefinedRoute();
     }

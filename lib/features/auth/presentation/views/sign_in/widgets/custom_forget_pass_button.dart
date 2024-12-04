@@ -16,12 +16,7 @@ class CustomForgetPassButton extends StatelessWidget {
           Navigator.pushNamed(context, Routes.forgetPasswordScreen);
         },
         child: Text(
-          'Forget Password?',
-          style: getRegularStyle(
-                  fontSize: FontSize.s14, color: ColorManager.primary)
-              .copyWith(
-            fontFamily: 'Montserrat',
-          ),
+          'Forgot Password?',
         ),
       ),
     );
