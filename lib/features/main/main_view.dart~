@@ -22,36 +22,46 @@ class MainView extends StatelessWidget {
     _viewModel.onNavItemTapped(index);
   }
 
-  Widget _buildScreens(index) => [
+  Widget _buildBodyScreens(index) => [
         HomeView(),
-        Text('Products', style: getBoldStyle(color: ColorManager.primary,fontSize: 20)),
-        Text('Notification',style: getBoldStyle(color: ColorManager.primary,fontSize: 20)),
-        Text('Profile',style: getBoldStyle(color: ColorManager.primary,fontSize: 20)),
+        Text('Products',
+            style: getBoldStyle(color: ColorManager.primary, fontSize: 20)),
+        Text('Notification',
+            style: getBoldStyle(color: ColorManager.primary, fontSize: 20)),
+        Text('Profile',
+            style: getBoldStyle(color: ColorManager.primary, fontSize: 20)),
       ][index];
+
+  Widget _buildAppBarTitle(int index) => [
+    const Text('Bids'),
+    const Text('Products'),
+    const Text('Notification'),
+    const Text('Profile'),
+  ][index];
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('bids'),
-      ),
-      body: StreamBuilder<int>(
-          stream: _viewModel.currentIndexOutput,
-          builder: (context, snapshot) {
-            return Center(
-              child: _buildScreens(snapshot.data ?? 0),
-            );
-          }),
-      bottomNavigationBar: StreamBuilder<int>(
-          stream: _viewModel.currentIndexOutput,
-          builder: (context, snapshot) {
-            return CustomNavigationBar(
+    return StreamBuilder<int>(
+      stream: _viewModel.currentIndexOutput,
+      builder: (context, snapshot) {
+        int currentIndex = snapshot.data ?? 0;
+        return SafeArea(
+          child: Scaffold(
+            appBar: AppBar(
+              title: _buildAppBarTitle(currentIndex),
+            ),
+            body: Center(
+              child: _buildBodyScreens(snapshot.data ?? 0),
+            ),
+            bottomNavigationBar: CustomNavigationBar(
               items: _navBarItems,
-              initialIndex: snapshot.data ?? 0,
+              initialIndex: currentIndex,
               onTap: _onNavItemTapped,
               indicatorHeight: 6,
-            );
-          }),
+            ),
+          ),
+        );
+      }
     );
   }
 }

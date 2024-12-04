@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:peakmart/app/resources/assets_manager.dart';
-import 'package:peakmart/app/resources/color_manager.dart';
-import 'package:peakmart/app/resources/font_manager.dart';
-import 'package:peakmart/app/resources/style_manager.dart';
 import 'package:peakmart/app/resources/values_manager.dart';
 
 class LandingView extends StatelessWidget {
@@ -22,12 +18,9 @@ class LandingView extends StatelessWidget {
       ),
       clipBehavior: Clip.antiAlias,
       elevation: 4.0,
+
       child: Container(
-        padding: const EdgeInsetsDirectional.only(
-          start: AppPadding.p30,
-          top: AppPadding.p20,
-          bottom: AppPadding.p14,
-        ),
+        margin:EdgeInsetsDirectional.only(start: 16.0,top: 16.0,bottom: 13),
         width: double.infinity,
         decoration: const BoxDecoration(
             image: DecorationImage(
@@ -37,21 +30,24 @@ class LandingView extends StatelessWidget {
           children: [
             Text(
               title,
-              style: getBoldStyle(
-                  fontSize: FontSize.s17, color: ColorManager.primary),
+              style: TextStyle(
+                fontSize: 18.0,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
             ),
+            SizedBox(height: 8.0),
             Text(
               subtitle,
-              style: getBoldStyle(
-                  fontSize: FontSize.s17, color: ColorManager.primary),
+              style: TextStyle(fontSize: 16.0, color: Colors.grey[700]),
+              textAlign: TextAlign.center,
             ),
-            SizedBox(height: AppSize.s40.h),
+            SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: () {},
               child: Text(
                 buttonText,
-                style: getBoldStyle(
-                    fontSize: FontSize.s17, color: ColorManager.white),
+                style: TextStyle(color: Colors.white),
               ),
             ),
           ],
