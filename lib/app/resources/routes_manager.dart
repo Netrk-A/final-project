@@ -17,111 +17,56 @@
 // import '../main_screen/main_view.dart';
 // import '../profile_details_screen/view.dart';
 //
-// class Routes {
-//   static const String splashScreen = "/";
-//   static const String onBoardingScreen = "/onBoarding";
-//   static const String loginScreen = "/login";
-//   static const String registerScreen = "/register";
-//   static const String privacyScreen = "/privacy";
-//   static const String recoverPasswordScreen = "/recoverPassword";
-//   static const String verifyCodeScreen = "/verifyCodeScreen";
-//   static const String changePasswordScreen = "/changePasswordScreen";
-//   static const String mainScreen = "/main";
-//   static const String searchScreen = '/searchScreen';
-//   static const String profileDetailsScreen = "/profileDetails";
-//   static const String settingScreen = "/setting";
-//   static const String exercisesScreen = "/exercises";
-//   static const String inTrainingScreen = '/inTraining';
-//   static const String trainersScreen = '/trainersScreen';
-//   static const String addNewDeviceScreen = '/addNewDevice';
-// }
-//
-// //
-// class RouteGenerator {
-//   static Route<dynamic> getRoute(RouteSettings settings) {
-//     switch (settings.name) {
-//       // case Routes.splashScreen:
-//       //   return MaterialPageRoute(builder: (_) => const SplashView());
-//       case Routes.loginScreen:
-//         return MaterialPageRoute(
-//           builder: (_) {
-//             initLoginModule();
-//             return const LoginView();
-//           },
-//         );
-//       case Routes.registerScreen:
-//         return MaterialPageRoute(
-//           builder: (_) {
-//             initRegisterModule();
-//             return const SignupView();
-//           },
-//         );
-//       case Routes.recoverPasswordScreen:
-//         return MaterialPageRoute(
-//           builder: (_) {
-//             initRecoverPasswordModule();
-//             return const RecoverPasswordView();
-//           },
-//         );
-//       case Routes.verifyCodeScreen:
-//         return MaterialPageRoute(
-//           builder: (_) {
-//             initVerifyCodeModule();
-//             return const VerifyCodeView();
-//           },
-//         );
-//       case Routes.inTrainingScreen:
-//         return MaterialPageRoute(
-//           builder: (_) {
-//             return TrainingViewBar(
-//               device: settings.arguments as BluetoothDevice,
-//             );
-//           },
-//         );
-//       // case Routes.changePasswordScreen:
-//       //   return MaterialPageRoute(
-//       //     builder: (_) {
-//       //       initChangePasswordModule();
-//       //       return const ChangePasswordView();
-//       //     },
-//       //   );
-//       case Routes.mainScreen:
-//         return MaterialPageRoute(builder: (_) {
-//           initMainModule();
-//           return const MainView();
-//         });
-//       case Routes.profileDetailsScreen:
-//         return MaterialPageRoute(builder: (_) {
-//           initProfileDetailsModule();
-//           return const ProfileDetailsView();
-//         });
-//       case Routes.exercisesScreen:
-//         return MaterialPageRoute(
-//           builder: (_) => const ExercisesView(),
-//         );
-//       case Routes.settingScreen:
-//         return MaterialPageRoute(builder: (_) => const AddNewTraineeView());
-//       case Routes.trainersScreen:
-//         return MaterialPageRoute(builder: (_) => const TrainersView());
-//       case Routes.addNewDeviceScreen:
-//         return MaterialPageRoute(builder: (_) => const AddNewDeviceView());
-//       default:
-//         return unDefinedRoute();
-//     }
-//   }
-//
-//   static Route unDefinedRoute() {
-//     return MaterialPageRoute(
-//       builder: (_) => Scaffold(
-//         appBar: AppBar(
-//           title: const Text(
-//             AppStrings.noRouteFound,
-//           ),
-//         ),
-//         body: const Center(
-//           child: Text(AppStrings.noRouteFound),
-//         ),
-//       ),
-//     );
-//   }
-// }
+import 'package:flutter/material.dart';
+import 'package:peakmart/app/resources/string_manager.dart';
+import 'package:peakmart/features/auth/presentation/views/reset_password/forget_password_view.dart';
+import 'package:peakmart/features/auth/presentation/views/otp_verification/otp_verification.dart';
+import 'package:peakmart/features/auth/presentation/views/sign_in/sign_in_view.dart';
+import 'package:peakmart/features/auth/presentation/views/sign_up/sign_up_view.dart';
+
+import '../../features/home/presentation/views/home_view.dart';
+
+class Routes {
+  static const String splashScreen = "/";
+  static const String homeScreen="/homeScreen";
+  static const String signInScreen = "/signInScreen";
+  static const String signUpScreen = "/signUpScreen";
+  static const String forgetPasswordScreen = "/forgetPasswordScreen";
+  static const String otpVerification = "/otpVerification";
+}
+
+class RouteGenerator {
+  static Route<dynamic> getRoute(RouteSettings settings) {
+    switch (settings.name) {
+
+      case Routes.homeScreen:
+        return MaterialPageRoute(builder: (_) =>  HomeView());
+      case Routes.signInScreen:
+        return MaterialPageRoute(builder: (_) => const SignInView());
+      case Routes.signUpScreen:
+        return MaterialPageRoute(builder: (_) => const SignUpView());
+      case Routes.forgetPasswordScreen:
+        return MaterialPageRoute(builder: (_) => const ForgetPasswordView());
+      case Routes.otpVerification:
+        return MaterialPageRoute(builder: (_) => const OtpVerification());
+
+      default:
+        return unDefinedRoute();
+    }
+  }
+
+  static Route unDefinedRoute() {
+    return MaterialPageRoute(
+      builder: (_) => Scaffold(
+        appBar: AppBar(
+          title: const Text(
+            AppStrings.noRouteFound,
+          ),
+        ),
+        body: const Center(
+          child: Text(AppStrings.noRouteFound),
+        ),
+      ),
+    );
+  }
+}

@@ -44,6 +44,7 @@ dependencies:
   animate_do: ^3.3.4
   flutter_bloc: ^8.1.6
   text_scroll: ^0.2.0
+  flutter_otp_text_field: ^1.2.0
 
 dev_dependencies:
   flutter_test:

@@ -9,6 +9,11 @@ class IconsAssets{
   static const  String notification= '$iconsPath/notification.svg';
   static const  String profile= '$iconsPath/profile.svg';
   static const  String products= '$iconsPath/products.svg';
+  static const String arrowBack = '$iconsPath/arrow_back.svg';
+  static const String facebookIcon = '$iconsPath/facebook.svg';
+  static const String appleIcon = '$iconsPath/apple.svg';
+  static const String googleIcon = '$iconsPath/google.svg';
+
   }
 
 class ImageAssets{
