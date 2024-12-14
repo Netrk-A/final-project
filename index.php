@@ -661,3 +661,5 @@
     <!-- footer -->
     <?php  include "footer.php"?>
 </body>
+<script src="js/content.js"></script>
+</html>
