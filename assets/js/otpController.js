@@ -1,4 +1,6 @@
 import Model from "./model/otpModel.js";
+import { helper } from "./config.js";
+
 import View from "./view/otpView.js";
 
 const Controller = ((model, view) => {
@@ -85,6 +87,8 @@ const Controller = ((model, view) => {
   };
 
   const init = () => {
+    helper.getAllCookies();
+    helper.sendOTP();
     startTimer();
     elements.resendLink.addEventListener("click", handleResendOTP);
     elements.verifyBtn.addEventListener("click", handleVerifyOTP);

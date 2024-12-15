@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="assets/css/otp.css">
 
     <!-- JS -->
-    <script defer src="assets/js/otpController.js" type="module"></script>
+    <script defer type='module' src="assets/js/otpController.js" type="module"></script>
     <script defer src="assets/js/components/theme.js"></script>
 </head>
 
