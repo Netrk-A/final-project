@@ -22,11 +22,12 @@
     <link rel="stylesheet" href="assets/css/register.css">
 
     <style>
-        .reset{
-  color: var(--color-primary);
-    float: right;
-    margin: 7px 0;
-}
+    .reset {
+        color: var(--color-primary);
+        float: right;
+        margin: 7px 0;
+    }
+
     @media (min-width:851px) {
         .register-container {
             justify-content: end;
@@ -40,7 +41,7 @@
         .login-data {
             margin-top: 30px;
         }
-        }
+    }
     </style>
 
     <!-- JS -->
@@ -52,7 +53,7 @@
     <div class="register-container">
         <!-- Left Section -->
         <div class="form-container">
-            <img src="assets/img/logo.png" alt="PeakMart Logo" class="logo">
+            <img src="assets/img/logo.png" alt="PeakMart Logo" class="logo" loading="lazy">
             <form class="login-data" id="loginForm">
                 <h1>Welcome to PeakMart!</h1>
                 <div class="input-group">
@@ -85,66 +86,68 @@
 
         <!-- Right Section -->
         <div class="image-container">
-            <img src="assets/img/register.png" alt="side Section Image">
+            <img src="assets/img/register.png" alt="side Section Image" loading="lazy">
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
-    document.getElementById('loginForm').addEventListener('submit', async function (event) {
-    event.preventDefault();
+    <script>
+    document.getElementById('loginForm').addEventListener('submit', async function(event) {
+        event.preventDefault();
 
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const proxyUrl = 'https://api.allorigins.win/get?url=';
-    const apiUrl = 'https://hk.herova.net/login_API/login-api.php';
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const proxyUrl = 'https://api.allorigins.win/get?url=';
+        const apiUrl = 'https://hk.herova.net/login_API/login-api.php';
 
-    try {
-        const response = await fetch(proxyUrl + encodeURIComponent(apiUrl), {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email, password }),
-        });
-
-        const data = await response.json();
-
-        if (response.ok) {
-            Swal.fire({
-                icon: 'success',
-                title: 'Login Successful',
-                text: data.message ||'Welcome sir/miss!',
-                footer: 'powered by <a style="color:#17b928;" href="https://herova.net">Herova</a>',
+        try {
+            const response = await fetch(proxyUrl + encodeURIComponent(apiUrl), {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email,
+                    password
+                }),
             });
-            // Redirect or perform other actions
-        } else {
+
+            const data = await response.json();
+
+            if (response.ok) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Login Successful',
+                    text: data.message || 'Welcome sir/miss!',
+                    footer: 'powered by <a style="color:#17b928;" href="https://herova.net">Herova</a>',
+                });
+                // Redirect or perform other actions
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Login Failed',
+                    text: data.message || 'Invalid credentials.',
+                    footer: 'powered by <a style="color:#17b928;" href="https://herova.net">Herova</a>',
+
+                });
+            }
+        } catch (error) {
             Swal.fire({
                 icon: 'error',
-                title: 'Login Failed',
-                text: data.message || 'Invalid credentials.',
+                title: 'Error',
+                text: data.message || 'Something went wrong. Please try again later.',
                 footer: 'powered by <a style="color:#17b928;" href="https://herova.net">Herova</a>',
 
             });
         }
-    } catch (error) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: data.message ||'Something went wrong. Please try again later.',
-            footer: 'powered by <a style="color:#17b928;" href="https://herova.net">Herova</a>',
-
-        });
-    }
-});
-// Toggle password visibility
-document.querySelector('.toggle-password').addEventListener('click', function () {
+    });
+    // Toggle password visibility
+    document.querySelector('.toggle-password').addEventListener('click', function() {
         const passwordInput = document.getElementById('password');
         const type = passwordInput.type === 'password' ? 'text' : 'password';
         passwordInput.type = type;
         this.classList.toggle('fa-eye-slash');
     });
-
-</script>
+    </script>
 </body>
 
 </html>

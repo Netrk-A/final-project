@@ -57,7 +57,7 @@
 
         <!-- Right Section -->
         <div class="image-container">
-            <img src="assets/img/register.png" alt="side Section Image">
+            <img src="assets/img/register.png" alt="side Section Image" loading="lazy">
         </div>
     </div>
 

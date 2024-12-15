@@ -25,7 +25,7 @@
         <h2 class="swiper-title">Trending Bids</h2>
         <div class="swiper-wrapper trending-bids ">
             <div class="swiper-slide product">
-                <img src="assets/img/product.png" alt="product">
+                <img src="assets/img/product.png" alt="product" loading="lazy">
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>
                     <p class="end-date">Auction End Date:
@@ -38,7 +38,7 @@
                 <a href="#" class="primary-btn enroll">Enroll Now</a>
             </div>
             <div class="swiper-slide product">
-                <img src="assets/img/product.png" alt="product">
+                <img src="assets/img/product.png" alt="product" loading="lazy">
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>
                     <p class="end-date">Auction End Date:
@@ -51,7 +51,7 @@
                 <a href="#" class="primary-btn enroll">Enroll Now</a>
             </div>
             <div class="swiper-slide product">
-                <img src="assets/img/product.png" alt="product">
+                <img src="assets/img/product.png" alt="product" loading="lazy">
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>
                     <p class="end-date">Auction End Date:
@@ -64,7 +64,7 @@
                 <a href="#" class="primary-btn enroll">Enroll Now</a>
             </div>
             <div class="swiper-slide product">
-                <img src="assets/img/product.png" alt="product">
+                <img src="assets/img/product.png" alt="product" loading="lazy">
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>
                     <p class="end-date">Auction End Date:
@@ -77,7 +77,7 @@
                 <a href="#" class="primary-btn enroll">Enroll Now</a>
             </div>
             <div class="swiper-slide product">
-                <img src="assets/img/product.png" alt="product">
+                <img src="assets/img/product.png" alt="product" loading="lazy">
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>
                     <p class="end-date">Auction End Date:
@@ -90,7 +90,7 @@
                 <a href="#" class="primary-btn enroll">Enroll Now</a>
             </div>
             <div class="swiper-slide product">
-                <img src="assets/img/product.png" alt="product">
+                <img src="assets/img/product.png" alt="product" loading="lazy">
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>
                     <p class="end-date">Auction End Date:
@@ -103,7 +103,7 @@
                 <a href="#" class="primary-btn enroll">Enroll Now</a>
             </div>
             <div class="swiper-slide product">
-                <img src="assets/img/product.png" alt="product">
+                <img src="assets/img/product.png" alt="product" loading="lazy">
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>
                     <p class="end-date">Auction End Date:
@@ -116,7 +116,7 @@
                 <a href="#" class="primary-btn enroll">Enroll Now</a>
             </div>
             <div class="swiper-slide product">
-                <img src="assets/img/product.png" alt="product">
+                <img src="assets/img/product.png" alt="product" loading="lazy">
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>
                     <p class="end-date">Auction End Date:
@@ -148,7 +148,7 @@
         <h2 class="swiper-title">future Bids</h2>
         <div class="swiper-wrapper future-bids ">
             <div class="swiper-slide product">
-                <img src="assets/img/product.png" alt="product">
+                <img src="assets/img/product.png" alt="product" loading="lazy">
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>
                     <p class="end-date">Auction End Date:
@@ -161,7 +161,7 @@
                 <a href="#" class="primary-btn enroll">Enroll Now</a>
             </div>
             <div class="swiper-slide product">
-                <img src="assets/img/product.png" alt="product">
+                <img src="assets/img/product.png" alt="product" loading="lazy">
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>
                     <p class="end-date">Auction End Date:
@@ -174,7 +174,7 @@
                 <a href="#" class="primary-btn enroll">Enroll Now</a>
             </div>
             <div class="swiper-slide product">
-                <img src="assets/img/product.png" alt="product">
+                <img src="assets/img/product.png" alt="product" loading="lazy">
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>
                     <p class="end-date">Auction End Date:
@@ -187,7 +187,7 @@
                 <a href="#" class="primary-btn enroll">Enroll Now</a>
             </div>
             <div class="swiper-slide product">
-                <img src="assets/img/product.png" alt="product">
+                <img src="assets/img/product.png" alt="product" loading="lazy">
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>
                     <p class="end-date">Auction End Date:
@@ -200,7 +200,7 @@
                 <a href="#" class="primary-btn enroll">Enroll Now</a>
             </div>
             <div class="swiper-slide product">
-                <img src="assets/img/product.png" alt="product">
+                <img src="assets/img/product.png" alt="product" loading="lazy">
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>
                     <p class="end-date">Auction End Date:
@@ -213,7 +213,7 @@
                 <a href="#" class="primary-btn enroll">Enroll Now</a>
             </div>
             <div class="swiper-slide product">
-                <img src="assets/img/product.png" alt="product">
+                <img src="assets/img/product.png" alt="product" loading="lazy">
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>
                     <p class="end-date">Auction End Date:
@@ -226,7 +226,7 @@
                 <a href="#" class="primary-btn enroll">Enroll Now</a>
             </div>
             <div class="swiper-slide product">
-                <img src="assets/img/product.png" alt="product">
+                <img src="assets/img/product.png" alt="product" loading="lazy">
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>
                     <p class="end-date">Auction End Date:
@@ -239,7 +239,7 @@
                 <a href="#" class="primary-btn enroll">Enroll Now</a>
             </div>
             <div class="swiper-slide product">
-                <img src="assets/img/product.png" alt="product">
+                <img src="assets/img/product.png" alt="product" loading="lazy">
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>
                     <p class="end-date">Auction End Date:
@@ -271,7 +271,7 @@
         <h2 class="swiper-title">current Bids</h2>
         <div class="swiper-wrapper current-bids ">
             <div class="swiper-slide product">
-                <img src="assets/img/product.png" alt="product">
+                <img src="assets/img/product.png" alt="product" loading="lazy">
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>
                     <p class="end-date">Auction End Date:
@@ -284,7 +284,7 @@
                 <a href="#" class="primary-btn enroll">Enroll Now</a>
             </div>
             <div class="swiper-slide product">
-                <img src="assets/img/product.png" alt="product">
+                <img src="assets/img/product.png" alt="product" loading="lazy">
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>
                     <p class="end-date">Auction End Date:
@@ -297,7 +297,7 @@
                 <a href="#" class="primary-btn enroll">Enroll Now</a>
             </div>
             <div class="swiper-slide product">
-                <img src="assets/img/product.png" alt="product">
+                <img src="assets/img/product.png" alt="product" loading="lazy">
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>
                     <p class="end-date">Auction End Date:
@@ -310,7 +310,7 @@
                 <a href="#" class="primary-btn enroll">Enroll Now</a>
             </div>
             <div class="swiper-slide product">
-                <img src="assets/img/product.png" alt="product">
+                <img src="assets/img/product.png" alt="product" loading="lazy">
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>
                     <p class="end-date">Auction End Date:
@@ -323,7 +323,7 @@
                 <a href="#" class="primary-btn enroll">Enroll Now</a>
             </div>
             <div class="swiper-slide product">
-                <img src="assets/img/product.png" alt="product">
+                <img src="assets/img/product.png" alt="product" loading="lazy">
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>
                     <p class="end-date">Auction End Date:
@@ -336,7 +336,7 @@
                 <a href="#" class="primary-btn enroll">Enroll Now</a>
             </div>
             <div class="swiper-slide product">
-                <img src="assets/img/product.png" alt="product">
+                <img src="assets/img/product.png" alt="product" loading="lazy">
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>
                     <p class="end-date">Auction End Date:
@@ -349,7 +349,7 @@
                 <a href="#" class="primary-btn enroll">Enroll Now</a>
             </div>
             <div class="swiper-slide product">
-                <img src="assets/img/product.png" alt="product">
+                <img src="assets/img/product.png" alt="product" loading="lazy">
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>
                     <p class="end-date">Auction End Date:
@@ -362,7 +362,7 @@
                 <a href="#" class="primary-btn enroll">Enroll Now</a>
             </div>
             <div class="swiper-slide product">
-                <img src="assets/img/product.png" alt="product">
+                <img src="assets/img/product.png" alt="product" loading="lazy">
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>
                     <p class="end-date">Auction End Date:
@@ -395,7 +395,7 @@
         <div class="swiper-wrapper finished-bids ">
             <div class="swiper-slide finished-bid product">
                 <div class="img">
-                    <img src="assets/img/product.png" alt="product">
+                    <img src="assets/img/product.png" alt="product" loading="lazy">
                 </div>
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>
@@ -407,7 +407,7 @@
             </div>
             <div class="swiper-slide finished-bid product">
                 <div class="img">
-                    <img src="assets/img/product.png" alt="product">
+                    <img src="assets/img/product.png" alt="product" loading="lazy">
                 </div>
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>
@@ -419,7 +419,7 @@
             </div>
             <div class="swiper-slide finished-bid product">
                 <div class="img">
-                    <img src="assets/img/product.png" alt="product">
+                    <img src="assets/img/product.png" alt="product" loading="lazy">
                 </div>
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>
@@ -431,7 +431,7 @@
             </div>
             <div class="swiper-slide finished-bid product">
                 <div class="img">
-                    <img src="assets/img/product.png" alt="product">
+                    <img src="assets/img/product.png" alt="product" loading="lazy">
                 </div>
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>
@@ -443,7 +443,7 @@
             </div>
             <div class="swiper-slide finished-bid product">
                 <div class="img">
-                    <img src="assets/img/product.png" alt="product">
+                    <img src="assets/img/product.png" alt="product" loading="lazy">
                 </div>
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>
@@ -455,7 +455,7 @@
             </div>
             <div class="swiper-slide finished-bid product">
                 <div class="img">
-                    <img src="assets/img/product.png" alt="product">
+                    <img src="assets/img/product.png" alt="product" loading="lazy">
                 </div>
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>
@@ -467,7 +467,7 @@
             </div>
             <div class="swiper-slide finished-bid product">
                 <div class="img">
-                    <img src="assets/img/product.png" alt="product">
+                    <img src="assets/img/product.png" alt="product" loading="lazy">
                 </div>
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>
@@ -479,7 +479,7 @@
             </div>
             <div class="swiper-slide finished-bid product">
                 <div class="img">
-                    <img src="assets/img/product.png" alt="product">
+                    <img src="assets/img/product.png" alt="product" loading="lazy">
                 </div>
                 <div class="details">
                     <p class="title">The Luxe Houndstooth Lounge Chair </p>

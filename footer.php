@@ -39,12 +39,12 @@
             <p>PEAK MART</p>
             <p>All you need can be found here</p>
             <div class="social-accounts">
-                <img src="assets/img/logo.png" class="logo" alt="logo">
+                <img src="assets/img/logo.png" class="logo" alt="logo" loading="lazy">
                 <ul>
-                    <li><img src="assets/img/icons/snapchat.png" alt></li>
-                    <li><img src="assets/img/icons/Instagram.png" alt></li>
-                    <li><img src="assets/img/icons/facebook.png" alt></li>
-                    <li><img src="assets/img/icons/twitter.png" alt></li>
+                    <li><img src="assets/img/icons/snapchat.png" alt loading="lazy"></li>
+                    <li><img src="assets/img/icons/Instagram.png" alt loading="lazy"></li>
+                    <li><img src="assets/img/icons/facebook.png" alt loading="lazy"></li>
+                    <li><img src="assets/img/icons/twitter.png" alt loading="lazy"></li>
                 </ul>
             </div>
         </div>

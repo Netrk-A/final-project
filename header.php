@@ -11,7 +11,7 @@
 <div class="headers font-montserrat">
     <!-- main header -->
     <header class="header">
-        <img src="assets/img/logo.png" class="logo">
+        <img src="assets/img/logo.png" class="logo" loading="lazy">
         <div class="actions">
             <button class="login-btn primary-btn" onclick="window.location.href='login.php'">login</button>
             <div class="cart">
@@ -74,7 +74,7 @@
     <!-- news -->
     <div class="news">
         <div class="news-logo">
-            <img src="assets/img/news-arrow.png" alt="logo-tv">
+            <img src="assets/img/news-arrow.png" alt="logo-tv" loading="lazy">
             <p class="news-word">News</p>
         </div>
         <div class="news-slide marquee">

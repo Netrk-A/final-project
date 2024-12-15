@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <!-- icon -->
-    <link rel="icon" href="assets/img/logo.png">
+    <link rel="icon" href="assets/img/logo.png" loading="lazy">
 
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -35,7 +35,7 @@
     <div class="register-container">
         <!-- Left Section -->
         <div class="form-container">
-            <img src="assets/img/logo.png" alt="PeakMart Logo" class="logo">
+            <img src="assets/img/logo.png" alt="PeakMart Logo" class="logo" loading="lazy">
             <form class="register-data">
                 <h1>Create An account</h1>
                 <div class="input-group">
@@ -100,7 +100,7 @@
 
         <!-- Right Section -->
         <div class="image-container">
-            <img src="assets/img/register.png" alt="side Section Image">
+            <img src="assets/img/register.png" alt="side Section Image" loading="lazy">
         </div>
     </div>
 

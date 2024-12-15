@@ -21,26 +21,26 @@
     <link rel="stylesheet" href="assets/css/register.css">
 
     <style>
-        .reset {
-            color: var(--color-primary);
-            float: right;
-            margin: 7px 0;
+    .reset {
+        color: var(--color-primary);
+        float: right;
+        margin: 7px 0;
+    }
+
+    @media (min-width:851px) {
+        .register-container {
+            justify-content: end;
         }
 
-        @media (min-width:851px) {
-            .register-container {
-                justify-content: end;
-            }
-
-            .image-container {
-                right: unset;
-                left: 0
-            }
-
-            .login-data {
-                margin-top: 30px;
-            }
+        .image-container {
+            right: unset;
+            left: 0
         }
+
+        .login-data {
+            margin-top: 30px;
+        }
+    }
     </style>
 
     <!-- JS -->
@@ -52,7 +52,7 @@
     <div class="register-container">
         <!-- Left Section -->
         <div class="form-container">
-            <img src="assets/img/logo.png" alt="PeakMart Logo" class="logo">
+            <img src="assets/img/logo.png" alt="PeakMart Logo" class="logo" loading="lazy">
             <form class="login-data" id="change_pass">
                 <h1>Change password</h1>
                 <div class="input-group">
@@ -90,7 +90,7 @@
 
         <!-- Right Section -->
         <div class="image-container">
-            <img src="assets/img/register.png" alt="side Section Image">
+            <img src="assets/img/register.png" alt="side Section Image" loading="lazy">
         </div>
     </div>
 
@@ -98,96 +98,96 @@
 
 
     <script>
-        document.getElementById('change_pass').addEventListener('submit', async function(event) {
-            event.preventDefault();
+    document.getElementById('change_pass').addEventListener('submit', async function(event) {
+        event.preventDefault();
 
-            const newPassword = document.getElementById('newPassword').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
-            const apiUrl = 'https://hk.herova.net/login_API/changepass.php';
-            const urlParams = new URLSearchParams(window.location.search);
-            const token = urlParams.get('token');
+        const newPassword = document.getElementById('newPassword').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        const apiUrl = 'https://hk.herova.net/login_API/changepass.php';
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get('token');
 
-            // Basic validation
-            if (newPassword !== confirmPassword) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Password Mismatch',
-                    text: 'The new password and confirm password do not match.',
-                    footer: 'Powered by <a style="color:#17b928;" href="https://herova.net">Herova</a>',
-                });
-                return;
-            }
+        // Basic validation
+        if (newPassword !== confirmPassword) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Password Mismatch',
+                text: 'The new password and confirm password do not match.',
+                footer: 'Powered by <a style="color:#17b928;" href="https://herova.net">Herova</a>',
+            });
+            return;
+        }
 
-            try {
-                // Make the API call directly
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        token: token,
-                        new_password: newPassword,
-                    }),
-
-                });
-                console.log(JSON.stringify({
+        try {
+            // Make the API call directly
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
                     token: token,
                     new_password: newPassword,
-                    }))
+                }),
 
-                var data = await response.json();
+            });
+            console.log(JSON.stringify({
+                token: token,
+                new_password: newPassword,
+            }))
 
-                // Log the entire response data to the console
-                console.log('API Response:', data);
+            var data = await response.json();
 
-                data = JSON.parse(data.contents);
+            // Log the entire response data to the console
+            console.log('API Response:', data);
+
+            data = JSON.parse(data.contents);
 
 
-                if (response.ok && data.success) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Password Changed',
-                        text: data.message || 'Your password has been successfully updated.',
-                        footer: 'Powered by <a style="color:#17b928;" href="https://herova.net">Herova</a>',
-                    });
-                } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Error',
-                        text: data.message || 'We could not process your request.',
-                        footer: 'Powered by <a style="color:#17b928;" href="https://herova.net">Herova</a>',
-                    });
-                }
-            } catch (error) {
-                console.error('Error:', error);
+            if (response.ok && data.success) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Password Changed',
+                    text: data.message || 'Your password has been successfully updated.',
+                    footer: 'Powered by <a style="color:#17b928;" href="https://herova.net">Herova</a>',
+                });
+            } else {
                 Swal.fire({
                     icon: 'error',
                     title: 'Error',
-                    text: 'Something went wrong. Please try again later.',
+                    text: data.message || 'We could not process your request.',
                     footer: 'Powered by <a style="color:#17b928;" href="https://herova.net">Herova</a>',
                 });
             }
-        });
-
-        // Toggle password visibility
-        const togglePasswordIcons = document.querySelectorAll('.toggle-password');
-
-        togglePasswordIcons.forEach(icon => {
-            icon.addEventListener('click', function() {
-                const passwordField = icon.previousElementSibling;
-
-                if (passwordField.type === 'password') {
-                    passwordField.type = 'text';
-                    icon.classList.add('fa-eye-slash');
-                    icon.classList.remove('fa-eye');
-                } else {
-                    passwordField.type = 'password';
-                    icon.classList.add('fa-eye');
-                    icon.classList.remove('fa-eye-slash');
-                }
+        } catch (error) {
+            console.error('Error:', error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Something went wrong. Please try again later.',
+                footer: 'Powered by <a style="color:#17b928;" href="https://herova.net">Herova</a>',
             });
+        }
+    });
+
+    // Toggle password visibility
+    const togglePasswordIcons = document.querySelectorAll('.toggle-password');
+
+    togglePasswordIcons.forEach(icon => {
+        icon.addEventListener('click', function() {
+            const passwordField = icon.previousElementSibling;
+
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                icon.classList.add('fa-eye-slash');
+                icon.classList.remove('fa-eye');
+            } else {
+                passwordField.type = 'password';
+                icon.classList.add('fa-eye');
+                icon.classList.remove('fa-eye-slash');
+            }
         });
+    });
     </script>
 
 </body>

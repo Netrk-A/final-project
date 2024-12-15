@@ -37,20 +37,25 @@
     form button {
         width: 50%
     }
-    .loginn{
+
+    .loginn {
         direction: rtl;
     }
+
     .image-container {
-    left: 0 !important;
+        left: 0 !important;
     }
-    .reset, #email{
+
+    .reset,
+    #email {
         direction: ltr;
     }
-    .reset{
-  color: var(--color-primary);
-    float: right;
-    margin: 7px 0;
-}
+
+    .reset {
+        color: var(--color-primary);
+        float: right;
+        margin: 7px 0;
+    }
     </style>
 </head>
 
@@ -60,11 +65,11 @@
         <div class="login-container">
             <!-- left Section -->
             <div class="image-container">
-                <img src="assets/img/register.png" alt="side Section Image">
+                <img src="assets/img/register.png" alt="side Section Image" loading="lazy">
             </div>
             <!-- right Section -->
             <div class="loginn">
-                <img src="assets/img/logo.png" alt="PeakMart Logo" class="logo">
+                <img src="assets/img/logo.png" alt="PeakMart Logo" class="logo" loading="lazy">
                 <div class="form-container">
                     <form class="login-data" id="reset">
                         <h1>Reset your password</h1>
@@ -72,7 +77,7 @@
                             <i class="fa fa-envelope"></i>
                             <input id="email" type="email" placeholder="Email Address" required autocomplete="email">
                         </div>
-                        <a class="reset" ><span>*</span> We will send you a message to set or reset
+                        <a class="reset"><span>*</span> We will send you a message to set or reset
                             your new
                             password</a>
                         <button type="submit" class="signup-btn" id="submit-btn">Send Code</button>
@@ -84,25 +89,27 @@
         </div>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script>
-    document.getElementById('reset').addEventListener('submit', async function (event) {
-    event.preventDefault();
+        document.getElementById('reset').addEventListener('submit', async function(event) {
+            event.preventDefault();
 
-    const email = document.getElementById('email').value;
-    const proxyUrl = 'https://api.allorigins.win/get?url=';
-    const apiUrl = 'https://hk.herova.net/login_API/SendToMail.php';
+            const email = document.getElementById('email').value;
+            const proxyUrl = 'https://api.allorigins.win/get?url=';
+            const apiUrl = 'https://hk.herova.net/login_API/SendToMail.php';
 
-    try {
-        const response = await fetch(proxyUrl + encodeURIComponent(apiUrl), {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email}),
-        });
+            try {
+                const response = await fetch(proxyUrl + encodeURIComponent(apiUrl), {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email
+                    }),
+                });
 
-        const data = await response.json();
+                const data = await response.json();
 
-        if (response.ok) {
+                if (response.ok) {
                     Swal.fire({
                         icon: 'success',
                         title: 'Password Reset Email Sent',
@@ -126,7 +133,7 @@
                 });
             }
         });
-</script>
+        </script>
     </body>
 
 </html>
