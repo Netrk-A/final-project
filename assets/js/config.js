@@ -1,3 +1,4 @@
+const newsAPI = "https://hk.herova.net/InPageApi/news-api.php?page=1&limit=10";
 const signupAPI = "https://hk.herova.net/login_API/signUp-api.php";
 let cookies;
 const proxySignupAPI =
@@ -5,6 +6,18 @@ const proxySignupAPI =
 // Replace with your API endpoint
 
 export const helper = {
+  getNews: async function () {
+    try {
+      const response = await fetch(newsAPI);
+      const data = await response.json();
+      const news = data.data;
+
+      return news;
+    } catch (error) {
+      return [];
+    }
+  },
+
   signup: async function (userData) {
     try {
       const response = await fetch(proxySignupAPI, {

@@ -37,7 +37,6 @@ function initializeSwiper(selector) {
 swiperClasses.forEach((swiperClass) => {
   const swiperEL = document.querySelector(swiperClass);
   if (swiperEL) {
-    console.log(swiperEL);
     const swiperInstance = initializeSwiper(swiperClass);
 
     swiperInstances.push(swiperInstance);

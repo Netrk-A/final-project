@@ -339,7 +339,8 @@
   white-space: nowrap;
 }
 
-.marquee p.news-content {
+.marquee a.news-content {
+  color: inherit;
   display: block;
   width: fit-content;
   margin: 0;
@@ -374,7 +375,7 @@ p.news-word {
   .news-logo img {
     width: 80px;
   }
-  .marquee p.news-content {
+  .marquee a.news-content {
     font-size: 12px;
   }
   p.news-word {

@@ -1,3 +1,4 @@
+import { helper } from "../config.js";
 // ======= DOM Elements =======
 const body = document.querySelector("body");
 const menuBtn = document.getElementById("menu");
@@ -21,7 +22,7 @@ navOverlay.addEventListener("click", () => {
 // ======= Active Page Marking =======
 (function markActivePage() {
   let path = window.location.pathname.split("/").pop() || "index.php";
-  console.log(path);
+  // console.log(path);
 
   document.querySelectorAll(".nav-item.active").forEach((link) => {
     link.classList.remove("active");
@@ -35,20 +36,14 @@ navOverlay.addEventListener("click", () => {
 // ======= News Control =======
 
 // Example news response
-const newsResponse = {
-  status: 1,
-  message: "fetched successfully",
-  data: [
-    { id: 1, news_data: "hi there for 1 minute", news_timer: 1 },
-    { id: 2, news_data: "hi there for three minutes", news_timer: 3 },
-    { id: 3, news_data: "hi there for two minutes", news_timer: 2 },
-  ],
-};
 
 // Handle news display
-function controlNews(news) {
-  if (!news.status) return;
-  cycleNewsItems(news.data, 0);
+async function controlNews() {
+  const newsArr = await helper.getNews();
+  // console.log(newsArr);
+
+  if (newsArr == []) return;
+  cycleNewsItems(newsArr, 0);
 }
 
 function cycleNewsItems(newsItems, index) {
@@ -57,17 +52,17 @@ function cycleNewsItems(newsItems, index) {
   const currentItem = newsItems[index];
 
   // Update DOM with current news item
-  newsContainer.dataset.id = currentItem.id;
-  newsContainer.dataset.time = currentItem.news_timer;
-  newsText.textContent = currentItem.news_data;
-
+  newsContainer.dataset.id = currentItem.NEWS_ID;
+  newsContainer.dataset.time = 1; //currentItem.news_timer;
+  newsText.textContent = currentItem.CONTENT;
+  newsText.href = currentItem.LINK;
   // Update text scrolling speed
   updateTextSpeed();
 
   // Schedule the next news item
   setTimeout(() => {
     cycleNewsItems(newsItems, index + 1);
-  }, (currentItem.news_timer * 60 + 20) * 1000);
+  }, (1 * 60 + 20) * 1000); //currentItem.news_timer instead of 1
 }
 
 // Update text scroll animation duration based on text and container width
@@ -81,5 +76,5 @@ function updateTextSpeed() {
 }
 
 // Start controlling news and adjust scrolling on resize
-controlNews(newsResponse);
+controlNews();
 window.addEventListener("resize", updateTextSpeed);

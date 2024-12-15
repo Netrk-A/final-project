@@ -143,9 +143,7 @@ const Controller = {
     });
 
     if (response.status === "success") {
-      setTimeout(() => {
-        window.location.href = "otp.php";
-      }, 3000);
+      window.location.href = "otp.php";
     }
   },
 
