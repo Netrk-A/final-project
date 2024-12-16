@@ -96,6 +96,13 @@
   gap: 30px;
 }
 
+.login-btn {
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-inline: 20px !important;
+}
+
 .login-btn:hover {
   background-color: var(--primary);
 }
@@ -119,7 +126,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
   font-size: 11px;
   color: var(--text-color);
 }

@@ -4,9 +4,9 @@ const otpAPI = "https://hk.herova.net/login_API/SendOTP.php";
 const newsAPI = "https://hk.herova.net/InPageApi/news-api.php?page=1&limit=10";
 
 const proxySignupAPI =
-"https://cors-anywhere.herokuapp.com/https://hk.herova.net/login_API/signUp-api.php";
+  "https://cors-anywhere.herokuapp.com/https://hk.herova.net/login_API/signUp-api.php";
 const proxyOtpAPI =
-"https://cors-anywhere.herokuapp.com/https://hk.herova.net/login_API/SendOTP.php";
+  "https://cors-anywhere.herokuapp.com/https://hk.herova.net/login_API/SendOTP.php";
 
 export const helper = {
   getNews: async function () {
@@ -23,7 +23,7 @@ export const helper = {
 
   signup: async function (userData) {
     try {
-      const response = await fetch(proxySignupAPI, {
+      const request = await fetch(signupAPI, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -31,10 +31,17 @@ export const helper = {
         body: JSON.stringify(userData),
       });
 
-      const data = await response.json();
-      console.log(data);
+      const response = await request.json();
+      const data = response.data;
+      console.log(response);
 
-      return data;
+      //this.setCookies([
+      //["EMAIL", data.email],
+      // ["USER_ID", data.id],
+      // ["USER_NAME", data.name],
+      //]);
+
+      return response;
     } catch (error) {
       console.error("Error:", error);
       return {
@@ -46,30 +53,28 @@ export const helper = {
 
   sendOTP: async function () {
     try {
-      const response = await fetch(proxyOtpAPI, {
+      const request = await fetch(otpAPI, {
         method: "POST",
         headers: {
-          Authorization:
-            "Basic os_v2_app_qreipn6eevcnlmthhbyklwilvtuwkouwnsvekumx5lwcrnxiujj7cgccpzp5edmpuz5omh22hez2wvpdw4euqovnebsbp2b22kbmb5q",
           "Content-Type": "application/json",
-          Cookie:
-           "EMAIL=aymanhussein0200@gmail.com; USER_ID=83; USER_NAME=scasc"
-,
+          // Cookie: document.cookie,
         },
         body: JSON.stringify({
           key: "SM",
         }),
+        credentials: "include",
+        redirect: "follow",
       });
 
-      const data = await response.json();
-      console.log(data);
+      const response = await request.json();
+      console.log(response);
 
-      return data;
+      return response;
     } catch (error) {
       console.error("Error:", error);
       return {
         status: "error",
-        message: "Something went wrong on our side\nplease try again later",
+        message: "Something went wrong!\nNetwork error",
       };
     }
   },
@@ -86,7 +91,13 @@ export const helper = {
 
   getCookie: function (key) {
     helper.getAllCookies();
-    console.log(cookies);
-    return cookies[key];
+    console.log(cookies.key);
+    return cookies.key;
+  },
+
+  setCookies: function (cookies) {
+    cookies.forEach(([key, value]) => {
+      document.cookie = `${key}=${value};`;
+    });
   },
 };

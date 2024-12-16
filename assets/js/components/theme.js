@@ -22,5 +22,4 @@ function toggleTheme() {
 function setTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
   if (darkModeSwitch) darkModeSwitch.checked = theme === "dark";
-  console.log(theme);
 }

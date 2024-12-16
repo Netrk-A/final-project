@@ -6,13 +6,11 @@ import View from "./view/otpView.js";
 const Controller = ((model, view) => {
   const { elements } = view;
 
-  const handleResendOTP = () => {
+  const handleResendOTP = async () => {
     if (model.state.canResend) {
-      view.showAlert(
-        "Success",
-        "The new OTP code has been sent successfully!",
-        "success"
-      );
+      const res = await helper.sendOTP();
+      view.showAlert(res.status, res.message, res.status);
+
       model.setResendTimer(120);
       view.disableResendLink(true);
       view.clearInputs();

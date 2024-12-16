@@ -7,6 +7,26 @@ const navOverlay = document.querySelector(".nav-overlay");
 const newsContainer = document.querySelector(".news");
 const newsText = document.querySelector(".news-content");
 
+const loginBtn = document.querySelector(".login-btn");
+const profile = document.querySelector(".bottom-nav .profile");
+const profileName = document.querySelector(".bottom-nav .profile p");
+
+const cookies = helper.getAllCookies();
+
+// ======= login click =======
+loginBtn.addEventListener(
+  "click",
+  () => (window.location.href = loginBtn.dataset.href)
+);
+
+// ======= cookies Check =======
+if (cookies.USER_NAME) {
+  loginBtn.innerHTML = cookies.USER_NAME;
+  loginBtn.dataset.href = "setting.php";
+  profile.href = "settings.php";
+  profileName.textContent = cookies.USER_NAME;
+}
+
 // ======= Sidebar Control =======
 
 // Toggle sidebar visibility

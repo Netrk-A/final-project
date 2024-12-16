@@ -100,7 +100,8 @@
         const apiUrl = 'https://hk.herova.net/login_API/login-api.php';
 
         try {
-            const response = await fetch(proxyUrl + encodeURIComponent(apiUrl), {
+            //proxyUrl + encodeURIComponent(apiUrl)
+            const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

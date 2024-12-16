@@ -122,6 +122,7 @@ button:disabled #timer {
 
 .resend-link:hover {
   color: var(--btn-hover);
+  background-color: unset;
   text-decoration: underline;
 }
 
