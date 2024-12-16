@@ -21,23 +21,19 @@ const Controller = ((model, view) => {
     }
   };
 
-  const handleVerifyOTP = () => {
+  const handleVerifyOTP = async () => {
     const enteredOTP = Array.from(elements.inputs)
       .map((input) => input.value)
       .join("");
     if (enteredOTP.length === 4) {
-      if (enteredOTP === model.state.otpResponse) {
-        view.showAlert(
-          "Joined successfully",
-          "The OTP is correct! Welcome to our website. Have fun!",
-          "success"
-        );
+      const res = await helper.verifyOTP(enteredOTP);
+      console.log(res);
+
+      view.showAlert(res.status, res.message, res.status);
+      if (res.status === "success") {
         setTimeout(() => {
           window.location.href = "index.php";
         }, 3000);
-      } else {
-        view.showAlert("Error", "Wrong OTP", "error");
-        view.clearInputs();
       }
     } else {
       view.showAlert("Error", "Please enter a 4-digit OTP", "error");

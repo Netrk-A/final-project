@@ -1,12 +1,15 @@
 let cookies;
 const signupAPI = "https://hk.herova.net/login_API/signUp-api.php";
 const otpAPI = "https://hk.herova.net/login_API/SendOTP.php";
+const verifyOtpAPI = "https://hk.herova.net/login_API/verfiyOTP.php";
 const newsAPI = "https://hk.herova.net/InPageApi/news-api.php?page=1&limit=10";
 
 const proxySignupAPI =
   "https://cors-anywhere.herokuapp.com/https://hk.herova.net/login_API/signUp-api.php";
 const proxyOtpAPI =
   "https://cors-anywhere.herokuapp.com/https://hk.herova.net/login_API/SendOTP.php";
+const proxyVerifyOtpAPI =
+  "https://cors-anywhere.herokuapp.com/https://hk.herova.net/login_API/verfiyOTP.php";
 
 export const helper = {
   getNews: async function () {
@@ -61,6 +64,36 @@ export const helper = {
         },
         body: JSON.stringify({
           key: "SM",
+        }),
+        credentials: "include",
+        redirect: "follow",
+      });
+
+      const response = await request.json();
+      console.log(response);
+
+      return response;
+    } catch (error) {
+      console.error("Error:", error);
+      return {
+        status: "error",
+        message: "Something went wrong!\nNetwork error",
+      };
+    }
+  },
+
+  verifyOTP: async function (enteredOTP) {
+    console.log(enteredOTP);
+
+    try {
+      const request = await fetch(verifyOtpAPI, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          // Cookie: document.cookie,
+        },
+        body: JSON.stringify({
+          otp: enteredOTP,
         }),
         credentials: "include",
         redirect: "follow",
