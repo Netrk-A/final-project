@@ -11,7 +11,7 @@ const loginBtn = document.querySelector(".login-btn");
 const profile = document.querySelector(".bottom-nav .profile");
 const profileName = document.querySelector(".bottom-nav .profile p");
 
-const cookies = helper.getAllCookies();
+let cookies;
 
 // ======= login click =======
 loginBtn.addEventListener(
@@ -20,11 +20,14 @@ loginBtn.addEventListener(
 );
 
 // ======= cookies Check =======
-if (cookies.USER_NAME) {
-  loginBtn.innerHTML = cookies.USER_NAME;
-  loginBtn.dataset.href = "setting.php";
-  profile.href = "settings.php";
-  profileName.textContent = cookies.USER_NAME;
+async function userProfile() {
+  cookies = await helper.getAllCookies();
+  if (cookies.USER_NAME) {
+    loginBtn.innerHTML = cookies.USER_NAME;
+    loginBtn.dataset.href = "setting.php";
+    profile.href = "settings.php";
+    profileName.textContent = cookies.USER_NAME;
+  }
 }
 
 // ======= Sidebar Control =======
@@ -96,5 +99,6 @@ function updateTextSpeed() {
 }
 
 // Start controlling news and adjust scrolling on resize
+userProfile();
 controlNews();
 window.addEventListener("resize", updateTextSpeed);

@@ -4,12 +4,12 @@ const otpAPI = "https://hk.herova.net/login_API/SendOTP.php";
 const verifyOtpAPI = "https://hk.herova.net/login_API/verfiyOTP.php";
 const newsAPI = "https://hk.herova.net/InPageApi/news-api.php?page=1&limit=10";
 
-const proxySignupAPI =
-  "https://cors-anywhere.herokuapp.com/https://hk.herova.net/login_API/signUp-api.php";
-const proxyOtpAPI =
-  "https://cors-anywhere.herokuapp.com/https://hk.herova.net/login_API/SendOTP.php";
-const proxyVerifyOtpAPI =
-  "https://cors-anywhere.herokuapp.com/https://hk.herova.net/login_API/verfiyOTP.php";
+// const proxySignupAPI =
+("https://cors-anywhere.herokuapp.com/https://hk.herova.net/login_API/signUp-api.php");
+// const proxyOtpAPI =
+("https://cors-anywhere.herokuapp.com/https://hk.herova.net/login_API/SendOTP.php");
+// const proxyVerifyOtpAPI =
+("https://cors-anywhere.herokuapp.com/https://hk.herova.net/login_API/verfiyOTP.php");
 
 export const helper = {
   getNews: async function () {
@@ -36,7 +36,7 @@ export const helper = {
 
       const response = await request.json();
       const data = response.data;
-      console.log(response);
+      //console.log(response);
 
       //this.setCookies([
       //["EMAIL", data.email],
@@ -70,7 +70,7 @@ export const helper = {
       });
 
       const response = await request.json();
-      console.log(response);
+      //console.log(response);
 
       return response;
     } catch (error) {
@@ -83,7 +83,7 @@ export const helper = {
   },
 
   verifyOTP: async function (enteredOTP) {
-    console.log(enteredOTP);
+    //console.log(enteredOTP);
 
     try {
       const request = await fetch(verifyOtpAPI, {
@@ -100,7 +100,7 @@ export const helper = {
       });
 
       const response = await request.json();
-      console.log(response);
+      //console.log(response);
 
       return response;
     } catch (error) {
@@ -112,19 +112,17 @@ export const helper = {
     }
   },
 
-  getAllCookies: function () {
-    cookies = document.cookie.split("; ").reduce((acc, cookie) => {
-      const [key, value] = cookie.split("=");
-      acc[key] = decodeURIComponent(value);
-      return acc;
-    }, {});
+  getAllCookies: async function () {
+    const request = await fetch("https://hk.herova.net/login_API/cookies.php");
+    cookies = await request.json();
     console.log(cookies);
+
     return cookies;
   },
 
   getCookie: function (key) {
     helper.getAllCookies();
-    console.log(cookies.key);
+    //console.log(cookies.key);
     return cookies.key;
   },
 
