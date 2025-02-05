@@ -4,6 +4,7 @@
 
 .swiper {
   width: calc(100% - 4rem);
+  height: fit-content;
 }
 
 .swiper-wrapper.news-bar {

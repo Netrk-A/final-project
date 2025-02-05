@@ -32,7 +32,7 @@
         <nav class="navbar">
             <a class="nav-item" href="index.php">Home</a>
             <a class="nav-item" href="footer.php">Categories</a>
-            <a class="nav-item" href="sliders.php" class="active">Bids</a>
+            <a class="nav-item" href="bids.php" class="active">Bids</a>
             <a class="nav-item" href="test.php">About us</a>
             <a class="nav-item" href="#">Contact us</a>
         </nav>
