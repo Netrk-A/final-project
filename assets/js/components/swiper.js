@@ -1,4 +1,10 @@
-const swiperClasses = [".trending", ".future", ".current", ".finished-bids"];
+const swiperClasses = [
+  ".trending",
+  ".future",
+  ".current",
+  ".finished-bids",
+  ".recommended",
+];
 
 const swiperInstances = [];
 
@@ -11,7 +17,7 @@ function initializeSwiper(selector) {
     speed: 700,
     autoplay: {
       delay: 2500,
-      disableOnInteraction: false,
+      disableOnInteraction: true,
     },
     navigation: {
       nextEl: `${selector} .button-next`,

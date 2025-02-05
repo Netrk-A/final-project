@@ -12,6 +12,7 @@
   --btn-hover: #814200;
   --border-gray: 1px solid rgba(128, 128, 128, 0.2);
   --shadow: 4px 6px 4px 0 rgba(0, 0, 0, 0.25);
+  --shadow2: 0px 0px 15px 8px #b1b1b1;
   --theme-transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
   --font-montserrat: "Montserrat", sans-serif;
 }
@@ -43,6 +44,7 @@ a {
   --background: #222;
   --background2: #282828;
   --shadow: 4px 6px 4px 0 rgba(39, 39, 39, 0.25);
+  --shadow2: 0px 0px 20px 5px #444;
 }
 
 /* ===============================
@@ -51,7 +53,7 @@ a {
 .astron-container {
   position: relative;
   width: 90vw;
-  max-width: 1300px;
+  max-width: 1000px;
   margin: 50px auto;
 }
 
@@ -61,7 +63,7 @@ a {
 .primary-btn {
   background-color: var(--primary);
   color: var(--btn-text-color);
-  padding: 5px 30px;
+  padding: 10px 30px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
