@@ -359,7 +359,7 @@
 
 p.news-word {
   position: absolute;
-  top: 0;
+  top: 5px;
   left: 50%;
   transform: translateX(-53%);
   font-size: 20px;
