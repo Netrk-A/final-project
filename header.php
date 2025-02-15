@@ -11,7 +11,9 @@
 <div class="headers font-montserrat">
     <!-- main header -->
     <header class="header">
-        <img src="assets/img/logo.png" class="logo" loading="lazy">
+        <a href="index.php">
+            <img src="assets/img/logo.png" class="logo" loading="lazy">
+        </a>
         <div class="actions">
             <button class="login-btn primary-btn" data-href='login.php'>login</button>
             <div class="cart">

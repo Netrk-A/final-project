@@ -271,11 +271,10 @@
     border-left: var(--border-gray);
     right: -1px;
     top: 79px;
-
+    gap: 0;
     width: 250px;
     height: 100vh;
     max-width: 60vw;
-    padding-block: 20px;
   }
 
   .navbar.active {
@@ -285,7 +284,9 @@
 
   .navbar a {
     position: relative;
-    padding-block: 10px;
+    padding-block: 25px 10px;
+    width: 100%;
+    text-align: center;
     color: var(--text-color);
   }
 
