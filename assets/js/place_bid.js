@@ -2,9 +2,9 @@ const imageUpload = document.getElementById("imageUpload");
 const imagePreview = document.getElementById("imagePreview");
 const uploadContainer = document.querySelector(".upload-container");
 const submitBtn = document.querySelector(`input[type='submit']`);
+let file;
 const inputFields = {
-  images: document.getElementById("imageUpload"),
-  name: document.getElementById("productName"),
+  productName: document.getElementById("productName"),
   description: document.getElementById("description"),
   startingPrice: document.getElementById("startingPrice"),
   expectedPrice: document.getElementById("expectedPrice"),
@@ -13,10 +13,11 @@ const inputFields = {
   deliveryDate: document.getElementById("deliveryDate"),
   period: document.getElementById("period"),
 };
+const formData = new FormData();
 
 // image upload functionality
 imageUpload.addEventListener("change", (event) => {
-  const file = event.target.files[0];
+  file = event.target.files[0];
   if (file) {
     imagePreview.src = URL.createObjectURL(file);
   }
@@ -35,7 +36,7 @@ uploadContainer.addEventListener("drop", (e) => {
   e.preventDefault();
   uploadContainer.classList.remove("highlight");
 
-  const file = e.dataTransfer.files[0];
+  file = e.dataTransfer.files[0];
   imageUpload.files = e.dataTransfer.files; // Set the dropped file to the input
 
   // Trigger the change event to handle preview logic (as above)
@@ -44,7 +45,26 @@ uploadContainer.addEventListener("drop", (e) => {
 });
 
 // collecting form data
+function collectFormData() {
+  for (const key in inputFields) {
+    if (inputFields.hasOwnProperty(key)) {
+      const value = inputFields[key].value;
+      formData.append(`${key}`, value);
+    }
+  }
+  //add the image
+  formData.append("image", file, file.name);
+  // log the data
+  // for (let [key, value] of formData.entries()) {
+  //   console.log(key, value);
+  // }
+}
+
+function validateFormData() {}
+
 submitBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  console.log(inputFields);
+  collectFormData();
+  submitBtn.disabled = true;
+  const validData = validateFormData();
 });
