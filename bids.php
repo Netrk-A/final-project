@@ -64,19 +64,19 @@
     <div class="top_bidders">
         <h2>Top bidders</h2>
         <div class="bidders">
-            <div class="top_bidder" data-rank='1'>
+            <div class="top_bidder" data-rank='1' id='1'>
                 <p class="rank">1.</p>
                 <img src="assets/img/people/person1.png" alt="" class="pfp" loading="lazy">
                 <p class="name">Amira Gad</p>
                 <p class="bid_price">$2000</p>
             </div>
-            <div class="top_bidder" data-rank='2'>
+            <div class="top_bidder" data-rank='2' id='2'>
                 <p class="rank">2.</p>
                 <img src="assets/img/people/person2.png" alt="" class="pfp" loading="lazy">
                 <p class="name">Samy Morad</p>
                 <p class="bid_price">$1700</p>
             </div>
-            <div class="top_bidder" data-rank='3'>
+            <div class="top_bidder" data-rank='3' id='3'>
                 <p class="rank">3.</p>
                 <img src="assets/img/people/person3.png" alt="" class="pfp" loading="lazy">
                 <p class="name">Ali Morgan</p>
