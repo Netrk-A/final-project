@@ -24,7 +24,7 @@
 
     <!-- JS -->
     <script defer src="assets/js/components/swiper.js"></script>
-    <!-- <script defer src="assets/js/components/scroll.js"></script> -->
+    <script defer src="assets/js/bid_details.js"></script>
 </head>
 
 <body>
@@ -32,7 +32,7 @@
     <?php include "header.php"?>
 
     <!-- poster -->
-    <div class="poster ">
+    <div class="poster">
         <img src="assets/img/product.png" alt="product" loading="lazy">
         <div class="content">
             <h2 class="title">The Luxe Houndstooth Lounge Chair</h2>

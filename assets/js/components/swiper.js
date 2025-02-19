@@ -2,7 +2,7 @@ const swiperClasses = [
   ".trending",
   ".future",
   ".current",
-  ".finished-bids",
+  ".finished",
   ".recommended",
 ];
 

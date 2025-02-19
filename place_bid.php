@@ -83,10 +83,18 @@
                     <p class="note">the date we get the product into the storehouse *</p>
                 </div>
             </div>
-            <div class="input-container">
-                <input type="number" min='7' max='300' name="period" id="period" placeholder="Period of Bid"
-                    autocomplete="on" required>
-                <p class="note">maximum number of days the product will be available for bidding *</p>
+            <div class="input-container-two">
+                <div>
+                    <input type="number" min='7' max='300' name="period" id="period" placeholder="Period of Bid"
+                        autocomplete="on" required>
+                    <p class="note">maximum number of days the product will be available for bidding *</p>
+                </div>
+                <div>
+                    <select id="category" name="category">
+                        <option value="" disabled selected>Select a Category</option>
+                        <option value="electronics_phones">Phones & Accessories</option>
+                    </select>
+                </div>
             </div>
 
             <input type="submit" class='button1' value="Place a Bid">

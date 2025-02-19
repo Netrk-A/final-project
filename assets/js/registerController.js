@@ -104,9 +104,12 @@ const Controller = {
         isValid = false;
         // this.validateField(key);
         // TODO sweet alert failute
+        const message = input.value
+          ? `${key} field doesn't match validation rules`
+          : `${key} field can't be empty`;
         swal({
           title: "Register Failure",
-          text: "Make sure all input fields are filled and match the validations",
+          text: message,
           icon: "error",
           button: "Retry",
           customClass: {
@@ -115,6 +118,7 @@ const Controller = {
         });
 
         console.log(`failure in input ${key}`);
+        return;
       }
     }
 

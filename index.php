@@ -27,6 +27,8 @@
     <!-- JS -->
     <script defer src="assets/js/components/swiper.js"></script>
     <script defer src="assets/js/components/scroll.js"></script>
+    <script defer src="assets/js/getProducts.js"></script>
+
 </head>
 
 <body>
@@ -518,7 +520,7 @@
     </div>
 
     <!-- ended bids -->
-    <div class="astron-container finished-bids">
+    <div class="astron-container finished">
         <div class="swiper products-container">
             <h2 class="swiper-title">Ended Bids</h2>
             <div class="swiper-wrapper finished-bids ">
@@ -638,7 +640,7 @@
             <h2>Unlock Maximum Value</h2>
             <p>Showcase your item and watch the bids drive up the price.<br />
                 Your chance to secure the highest profit is here!</p>
-            <a class="main-button" href="">Add yours</a>
+            <a class="main-button" href="place_bid.php">Add yours</a>
         </div>
     </div>
 

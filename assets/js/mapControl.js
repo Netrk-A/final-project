@@ -8,7 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
   let map;
   let marker;
   let lastPosition = { lat: 29.978736, lng: 31.134208 };
+  let locationInfo = { lat: 29.978736, lng: 31.134208 };
   let selectedLatLng;
+  let [WHlat, WHlng] = [29.978736, 31.134208];
   let geocodingError = false;
 
   locationButton.addEventListener("click", () => {
@@ -17,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!map) {
       // Initialize map with Giza coordinates
       const gizaLatLng = { lat: 29.978736, lng: 31.134208 };
-      map = L.map("map").setView(gizaLatLng, 13); // Set initial view to Giza
+      map = L.map("map").setView(gizaLatLng, 9); // Set initial view to Giza
 
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution:
@@ -58,8 +60,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (selectedLatLng) {
       const lat = selectedLatLng.lat;
       const lng = selectedLatLng.lng;
+
       lastPosition = { lat, lng };
-      locationInput.value = lastPosition;
 
       geocodingError = false;
 
@@ -93,6 +95,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
             locationInput.value = `${lat},${lng}`;
             locationDisplay.textContent = locationName;
+
+            const userLocation = L.latLng(lat, lng);
+            const WareHouseLocation = L.latLng(WHlat, WHlng);
+
+            locationInfo = {
+              lat,
+              lng,
+              address: locationName,
+              distance: userLocation.distanceTo(WareHouseLocation) / 1000,
+            };
+            // console.log(JSON.stringify(locationInfo));
+            locationInput.value = JSON.stringify(locationInfo);
 
             mapPopup.style.display = "none";
           } else {
