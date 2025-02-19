@@ -104,15 +104,14 @@ function collectFormData() {
 async function postData() {
   console.log(formObject);
   // console.log(JSON.stringify(formData), formData);
-  const url =
-    "https://corsproxy.io/?url=http://hk.herova.net/products/new_Product.php";
+  const url = "http://hk.herova.net/products/new_Product.php";
   try {
     const response = await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: formData,
+      body: formObject,
     });
 
     if (!response.ok) {

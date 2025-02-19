@@ -44,7 +44,8 @@ async function fetchProductList(key = "3") {
    *                                  containing the product data, or null if
    *                                  an error occurs.
    */
-  const url = `https://corsproxy.io/?url=http://hk.herova.net/products/fetch.php?key=${key}`;
+  const url = `http://hk.herova.net/products/fetch.php?key=${key}`;
+  // const url = `https://corsproxy.io/?url=http://hk.herova.net/products/fetch.php?key=${key}`;
 
   try {
     const response = await fetch(url);
