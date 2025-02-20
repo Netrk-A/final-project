@@ -10,8 +10,9 @@ const newsText = document.querySelector(".news-content");
 const loginBtn = document.querySelector(".login-btn");
 const profile = document.querySelector(".bottom-nav .profile");
 const profileName = document.querySelector(".bottom-nav .profile p");
+const redirectBtn1 = document.querySelector(".redirect1");
 
-let cookies
+let cookies, userProfile;
 
 // ======= login click =======
 loginBtn.addEventListener(
@@ -23,6 +24,18 @@ loginBtn.addEventListener(
 
 async function userProfile() {
   cookies = await helper.getAllCookies();
+  userProfile = cookies.HKHN ? "seller" : cookies.HK ? "buyer" : "unlogged";
+  localStorage.setItem("userProfile", userProfile);
+  // handle  redirect buttons
+  if (window.location.href.includes("index.php"));
+  {
+    redirectBtn1.href =
+      userProfile === "seller"
+        ? "place_bid.php"
+        : userProfile === "buyer"
+        ? "signup_bid.php"
+        : "login.php";
+  }
   if (cookies.USER_NAME) {
     loginBtn.innerHTML = cookies.USER_NAME;
     loginBtn.dataset.href = "setting.php";
@@ -103,4 +116,3 @@ function updateTextSpeed() {
 userProfile();
 controlNews();
 window.addEventListener("resize", updateTextSpeed);
-	

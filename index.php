@@ -40,7 +40,7 @@
             <div class="header_inner">
                 <div class="head_cont">
                     <h1>Get the deal of a lifetime... Join and start bidding!</h1>
-                    <a class="main-button" href="login.php">Join now</a>
+                    <a class="main-button redirect1" href="login.php">login now</a>
                 </div>
                 <img src="assets/img/header.png" alt="header" loading="lazy">
             </div>
