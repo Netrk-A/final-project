@@ -55,10 +55,12 @@ async function fetchCategories() {
 
 async function manageCategories() {
   const categories = await fetchCategories();
-  categories.forEach((category) => {
-    const markup = `<option value="${category.CAT_ID}">${category.CAT_NAME}</option>`;
-    categoriesDOM.insertAdjacentHTML("beforeend", markup);
-  });
+  if (categories) {
+    categories.forEach((category) => {
+      const markup = `<option value="${category.CAT_ID}">${category.CAT_NAME}</option>`;
+      categoriesDOM.insertAdjacentHTML("beforeend", markup);
+    });
+  }
 }
 
 uploadContainer.addEventListener("dragover", (e) => {
@@ -106,9 +108,6 @@ function collectFormData() {
 }
 
 async function postData() {
-  //console.log(formObject);
-   
-  // console.log(JSON.stringify(formData), formData);
   const url = "https://hk.herova.net/products/new_Product.php";
   try {
     const response = await fetch(url, {
@@ -117,10 +116,12 @@ async function postData() {
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status},message ${response.message}`);
+      throw new Error(
+        `HTTP error! status: ${response.status},message ${response.message}`
+      );
     }
 
-    const responseData = await response.text(); // Or response.json() if the server returns JSON
+    const responseData = await response.json();
     console.log("Success:", responseData);
   } catch (error) {
     console.error("Error:", error);

@@ -14,7 +14,7 @@ function initializeSwiper(selector) {
     loop: true,
     spaceBetween: 30,
     // centeredSlides: true,
-    speed: 700,
+    speed: 200,
     autoplay: {
       delay: 2500,
       disableOnInteraction: true,

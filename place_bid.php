@@ -72,15 +72,16 @@
             </div>
             <div class="input-container-two">
                 <div>
-                    <label for="startingDate">Start Date:</label>
-                    <input type="date" name="startingDate" id="startingDate" placeholder="Starting Date"
-                        autocomplete="off" required>
-                </div>
-                <div>
                     <label for="startingDate">Delivery Date:</label>
                     <input type="date" name="deliveryDate" id="deliveryDate" placeholder="delivery Date "
                         autocomplete="off" required>
                     <p class="note">the date we get the product into the storehouse *</p>
+                </div>
+                <div>
+                    <label for="startingDate">Start Date:</label>
+                    <input type="date" name="startingDate" id="startingDate" placeholder="Starting Date"
+                        autocomplete="off" required>
+                    <p class="note">When the product will be available for users to start bidding *</p>
                 </div>
             </div>
             <div class="input-container-two">

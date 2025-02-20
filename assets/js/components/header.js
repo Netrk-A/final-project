@@ -27,8 +27,7 @@ async function userProfile() {
   userProfile = cookies.HKHN ? "seller" : cookies.HK ? "buyer" : "unlogged";
   localStorage.setItem("userProfile", userProfile);
   // handle  redirect buttons
-  if (window.location.href.includes("index.php"));
-  {
+  if (window.location.href.includes("index.php")) {
     redirectBtn1.href =
       userProfile === "seller"
         ? "place_bid.php"

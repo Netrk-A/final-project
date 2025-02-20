@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v5.15.4/css/all.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/account.css">
-<style>
+    <style>
     /* .news{
     display: none;
 } */
-</style>
+    </style>
 </head>
 
 <body>
@@ -33,37 +33,44 @@
             <form id="signup" action="" method="post">
                 <div class="input-container">
                     <i class="far fa-user"></i>
-                    <input type="name" style="min-width: 210px;margin-top: 45px;" name="name" id="name" placeholder="username" autocomplete="on" value="Mohamed" required>
+                    <input type="name" style="min-width: 210px;margin-top: 45px;" name="name" id="name"
+                        placeholder="username" autocomplete="on" value="Mohamed" required>
                 </div>
                 <div class="input-container">
                     <i class="far fa-envelope"></i>
-                    <input type="text" style="min-width: 210px;" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="email address" value="mohamed15@gmail.com" autocomplete="on" required>
+                    <input type="text" style="min-width: 210px;" name="email" id="email" pattern="[^ @]*@[^ @]*"
+                        placeholder="email address" value="mohamed15@gmail.com" autocomplete="on" required>
                 </div>
                 <div class="input-container">
                     <i class="fal fa-phone"></i>
-                    <input type="tel" style="min-width: 210px;" name="phone" id="phone" placeholder="phone number" pattern="[0-9]" minlength="9" maxlength="14" autocomplete="on" value="+966 57236936">
+                    <input type="tel" style="min-width: 210px;" name="phone" id="phone" placeholder="phone number"
+                        pattern="[0-9]" minlength="9" maxlength="14" autocomplete="on" value="+966 57236936">
                 </div>
                 <div class="input-container">
                     <i class="fal fa-globe-africa"></i>
-                    <input type="text" style="min-width: 210px;" name="country" id="country" placeholder="country" value="Saudi Arabia" autocomplete="on" required>
+                    <input type="text" style="min-width: 210px;" name="country" id="country" placeholder="country"
+                        value="Saudi Arabia" autocomplete="on" required>
                 </div>
                 <div class="input-container">
                     <i class="fal fa-globe-africa"></i>
-                    <input type="text" style="min-width: 210px;" name="address" id="address" placeholder="address" value="hufgwifwyuhqrijokjhg323rhi;jok’qjrhefvgc" autocomplete="on" required>
+                    <input type="text" style="min-width: 210px;" name="address" id="address" placeholder="address"
+                        value="hufgwifwyuhqrijokjhg323rhi;jok’qjrhefvgc" autocomplete="on" required>
                 </div>
                 <div class="input-container-two">
                     <div>
                         <i class="fas fa-university"></i>
-                        <input type="text" name="gov" id="gov" placeholder="government" value="Elsharqa" autocomplete="on" required>
+                        <input type="text" name="gov" id="gov" placeholder="government" value="Elsharqa"
+                            autocomplete="on" required>
 
                     </div>
                     <div>
                         <i class="fal fa-city"></i>
-                        <input type="text" name="city" id="city" placeholder="city" value="Elsharqa" autocomplete="on" required>
+                        <input type="text" name="city" id="city" placeholder="city" value="Elsharqa" autocomplete="on"
+                            required>
                     </div>
                 </div>
                 <div class="input-container">
-                <i class="fal fa-hand-holding-usd"></i>
+                    <i class="fal fa-hand-holding-usd"></i>
                     <select style="min-width: 210px;" name="status" required>
                         <option value="inland">inland</option>
                         <option value="outland">outland</option>
@@ -71,7 +78,8 @@
                 </div>
                 <div class="input-container">
                     <i class="far fa-lock"></i>
-                    <input type="text" style="min-width: 210px;" id="Password" placeholder="password" name="Password" value="Herova@2024" minlength="8" maxlength="15" autocomplete="off" required>
+                    <input type="text" style="min-width: 210px;" id="Password" placeholder="password" name="Password"
+                        value="Herova@2024" minlength="8" maxlength="15" autocomplete="off" required>
                 </div>
                 <a class="button1" type="submit">update</a>
                 <p>powered by <a href="herova.net" style="color:#0B8A00;">Herova</a></p>
@@ -163,26 +171,26 @@
     </div>
     </div>
     <script>
-        function swapping(divNumber) {
-            var element1 = document.getElementById("toggle1");
-            var element2 = document.getElementById("toggle3");
-            var element3 = document.querySelector('body > div.account > div.swap > a.orders');
-            var element4 = document.querySelector("body > div.account > div.swap > a.info");
+    function swapping(divNumber) {
+        var element1 = document.getElementById("toggle1");
+        var element2 = document.getElementById("toggle3");
+        var element3 = document.querySelector('body > div.account > div.swap > a.orders');
+        var element4 = document.querySelector("body > div.account > div.swap > a.info");
 
 
-            if (divNumber === 1 && element1.classList.contains("hidden")) {
-                element1.classList.remove("hidden");
-                element2.classList.add("hidden");
-                element4.style.color = "#d56b00";
-                element3.style.color = "black";
-            } else if (divNumber === 3 && element2.classList.contains("hidden")) {
-                element1.classList.add("hidden");
-                element2.classList.remove("hidden");
-                element3.style.color = "#d56b00";
-                element4.style.color = 'black';
-            }
-
+        if (divNumber === 1 && element1.classList.contains("hidden")) {
+            element1.classList.remove("hidden");
+            element2.classList.add("hidden");
+            element4.style.color = "#d56b00";
+            element3.style.color = "black";
+        } else if (divNumber === 3 && element2.classList.contains("hidden")) {
+            element1.classList.add("hidden");
+            element2.classList.remove("hidden");
+            element3.style.color = "#d56b00";
+            element4.style.color = 'black';
         }
+
+    }
     </script>
     <?php include_once "footer.php"; ?>
 </body>
