@@ -3,8 +3,28 @@
 =============================== */
 
 .swiper {
+  position: relative;
   width: calc(100% - 4rem);
   height: fit-content;
+}
+
+.swiper-wrapper {
+  min-height: 350px;
+}
+
+.loading .swiper-wrapper,
+.loading .swiper-navigation {
+  visibility: hidden;
+}
+
+.loading .swiper-loader {
+  min-height: 300px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 50px;
+  background-color: var(--background);
 }
 
 .swiper-wrapper.news-bar {
@@ -28,7 +48,6 @@
   transform: translate(-50%, -50%);
   pointer-events: none; /* Prevent blocking interactions */
 }
-
 
 .button-next,
 .button-prev {
@@ -61,6 +80,20 @@
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
 }
 
-/* .trending-container + .swiper-navigation {
-  display: none;
-} */
+/* spinner style */
+.spinner {
+  position: absolute;
+  top: calc(50% - 75px);
+  left: calc(50% - 50px);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 10px solid var(--primary);
+  border-top-color: var(--background);
+  animation: loading 1s linear infinite;
+}
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
+}

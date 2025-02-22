@@ -93,9 +93,12 @@
     </div>
 
     <!-- trending bids -->
-    <div class="astron-container trending">
+    <div class="astron-container trending loading">
         <div class="swiper products-container">
             <h2 class="swiper-title">Trending Bids</h2>
+            <div class="swiper-loader">
+                <div class="spinner"></div>
+            </div>
             <div class="swiper-wrapper trending-bids ">
             </div>
             <!-- Navigation Buttons -->
