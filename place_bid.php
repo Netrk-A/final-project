@@ -16,6 +16,9 @@
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    <!-- sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!-- Leaflet map -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
@@ -41,7 +44,7 @@
         <form id="uploadProduct" action="" method="post">
             <h1>place a bid</h1>
             <div class="upload-container">
-                <input type="file" id="imageUpload" accept="image/*">
+                <input type="file" id="imageUpload" multiple accept="image/*">
                 <label for="imageUpload" class="upload-label">
                     <i class="fa-regular fa-image"></i>
                     <span class="upload-text">Drag and drop your product photo</span>
@@ -97,7 +100,6 @@
                     </select>
                 </div>
             </div>
-
             <input type="submit" class='button1' value="Place a Bid">
             <p class="copyright">powered by <a href="herova.net" style="color:#0B8A00;">Herova</a></p>
         </form>

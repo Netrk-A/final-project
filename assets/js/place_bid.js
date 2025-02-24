@@ -4,7 +4,7 @@ const imagePreview = document.getElementById("imagePreview");
 const uploadContainer = document.querySelector(".upload-container");
 const submitBtn = document.querySelector(`input[type='submit']`);
 const categoriesDOM = document.querySelector("#category");
-let file;
+let files = []; // Change file to files (array)
 const inputFields = {
   name: document.getElementById("productName"),
   description: document.getElementById("description"),
@@ -21,9 +21,10 @@ const formObject = {};
 
 // image upload functionality
 imageUpload.addEventListener("change", (event) => {
-  file = event.target.files[0];
-  if (file) {
-    imagePreview.src = URL.createObjectURL(file);
+  files = event.target.files; // Store multiple files
+  if (files.length > 0) {
+    // Display the first image preview (optional)
+    imagePreview.src = URL.createObjectURL(files[0]);
     imgContainer.classList.add("hide");
   }
 });
@@ -35,7 +36,7 @@ async function fetchCategories() {
     const response = await fetch(url);
 
     if (!response.ok) {
-      const errorText = await response.text(); // Try to get error details from the server
+      const errorText = await response.json(); // Try to get error details from the server
       throw new Error(
         `HTTP error! status: ${response.status},  Details: ${errorText}`
       );
@@ -76,8 +77,8 @@ uploadContainer.addEventListener("drop", (e) => {
   e.preventDefault();
   uploadContainer.classList.remove("highlight");
 
-  file = e.dataTransfer.files[0];
-  imageUpload.files = e.dataTransfer.files; // Set the dropped file to the input
+  files = e.dataTransfer.files; // Store multiple files from drag and drop
+  imageUpload.files = e.dataTransfer.files; // Set the dropped files to the input
 
   // Trigger the change event to handle preview logic (as above)
   const event = new Event("change", { bubbles: true });
@@ -94,17 +95,16 @@ function collectFormData() {
       formObject[`${key}`] = value;
     }
   }
-  //add the image
-  formData.append("photo", file);
-  formObject[`photo`] = file;
+  //add the images
+  for (let i = 0; i < files.length; i++) {
+    formData.append("photo[]", files[i]); // Append each file with 'photo[]'
+  }
+  formObject[`photo`] = files; // Store files in formObject
   // log the data
   formData.forEach((value, key) => {
     console.log(`${key} : ${value}`);
   });
-
-  // for (let [key, value] of formData.entries()) {
-  //   console.log(value);
-  // }
+  console.log(formObject.photo);
 }
 
 async function postData() {
@@ -114,6 +114,8 @@ async function postData() {
       method: "POST",
       body: formData,
     });
+    console.log(response);
+    console.log(response.text);
 
     if (!response.ok) {
       throw new Error(
@@ -122,9 +124,20 @@ async function postData() {
     }
 
     const responseData = await response.json();
-    console.log("Success:", responseData);
+    console.log("swal success");
+    Swal.fire({
+      text: responseData.message,
+      icon: "success",
+      confirmButtonText: "continue",
+    });
   } catch (error) {
-    console.error("Error:", error);
+    console.log("swal success");
+    Swal.fire({
+      title: "Register Failure",
+      text: error.message,
+      icon: "error",
+      confirmButtonText: "Retry",
+    });
   }
 }
 
