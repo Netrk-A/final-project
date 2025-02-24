@@ -49,7 +49,8 @@ function renderSwiperData(container, products, ended = false) {
     if (ended) {
       productMarkup = `
                 <div class="swiper-slide finished-bid product">
-                    <div class="img">
+                    <div class="img loading-img">
+                        <div class="spinner"></div>
                         <img src="assets/img/product.png" alt="product" loading="lazy">
                     </div>
                     <div class="details">
@@ -64,7 +65,10 @@ function renderSwiperData(container, products, ended = false) {
     } else {
       productMarkup = `
                 <div class="swiper-slide product">
-                    <img src="assets/img/product.png" alt="product" loading="lazy">
+                    <div class="img loading-img">
+                        <div class="spinner"></div>
+                        <img src="assets/img/product.png" alt="product" loading="lazy">
+                    </div>
                     <div class="details">
                         <p class="title">${product.ITEM_NAME}</p>
                         <p class="end-date">Auction End Date:
@@ -79,6 +83,14 @@ function renderSwiperData(container, products, ended = false) {
     `;
     }
     container.insertAdjacentHTML("beforeend", productMarkup);
+  });
+  // remove spinner on whole swiper
+  container.parentElement.parentElement.classList.remove("loading");
+  //  remove spinner on loaded img
+  container.querySelectorAll("img").forEach((image) => {
+    image.addEventListener("load", () => {
+      image.parentElement.classList.remove("loading-img");
+    });
   });
 }
 

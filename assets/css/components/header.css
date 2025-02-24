@@ -370,6 +370,15 @@ p.news-word {
   clip-path: inset(0% 100% 0% 0%);
 }
 
+@media (max-width: 1000px) {
+  .header {
+    font-size: 13px;
+  }
+  nav.navbar {
+    gap: 18px;
+  }
+}
+
 @media (max-width: 780px) {
   .news {
     padding: 7px;

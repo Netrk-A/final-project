@@ -115,9 +115,12 @@
     </div>
 
     <!-- future bids -->
-    <div class="astron-container future">
+    <div class="astron-container future loading">
         <div class="swiper products-container">
             <h2 class="swiper-title">future Bids</h2>
+            <div class="swiper-loader">
+                <div class="spinner"></div>
+            </div>
             <div class="swiper-wrapper future-bids ">
             </div>
             <!-- Navigation Buttons -->
@@ -192,9 +195,12 @@
     </div>
 
     <!-- current bids -->
-    <div class="astron-container current">
+    <div class="astron-container current loading">
         <div class="swiper products-container">
             <h2 class="swiper-title">current Bids</h2>
+            <div class="swiper-loader">
+                <div class="spinner"></div>
+            </div>
             <div class="swiper-wrapper current-bids ">
             </div>
             <!-- Navigation Buttons -->
@@ -211,9 +217,12 @@
     </div>
 
     <!-- ended bids -->
-    <div class="astron-container finished">
+    <div class="astron-container finished loading">
         <div class="swiper products-container">
             <h2 class="swiper-title">Ended Bids</h2>
+            <div class="swiper-loader">
+                <div class="spinner"></div>
+            </div>
             <div class="swiper-wrapper finished-bids ">
             </div>
         </div>

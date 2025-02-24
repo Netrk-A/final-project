@@ -8,6 +8,7 @@ const newsContainer = document.querySelector(".news");
 const newsText = document.querySelector(".news-content");
 
 const loginBtn = document.querySelector(".login-btn");
+const uploadProductAnchor = document.querySelector(".upload-product");
 const profile = document.querySelector(".bottom-nav .profile");
 const profileName = document.querySelector(".bottom-nav .profile p");
 const redirectBtn1 = document.querySelector(".redirect1");
@@ -22,17 +23,42 @@ loginBtn.addEventListener(
 
 // ======= cookies Check =======
 
-async function userProfile() {
+async function setUserProfile() {
   cookies = await helper.getAllCookies();
-  userProfile = cookies.HKHN ? "seller" : cookies.HK ? "buyer" : "unlogged";
+  userProfile = cookies.EMAIL
+    ? "buyer-NA"
+    : cookies.HKH
+    ? "seller-A"
+    : cookies.HKHN
+    ? "seller-NA"
+    : cookies.HK
+    ? "buyer-A"
+    : "guest";
   localStorage.setItem("userProfile", userProfile);
-  // handle  redirect buttons
+  console.log(userProfile);
+  // redirects
+  // header anchor
+  uploadProductAnchor.href =
+    userProfile === "seller-A"
+      ? "place_bid.php"
+      : userProfile === "seller-NA"
+      ? "bid_otp.php"
+      : userProfile === "buyer-A"
+      ? "signup_bid.php"
+      : userProfile === "buyer-NA"
+      ? "otp.php"
+      : "login.php";
+
   if (window.location.href.includes("index.php")) {
     redirectBtn1.href =
-      userProfile === "seller"
+      userProfile === "seller-A"
         ? "place_bid.php"
-        : userProfile === "buyer"
+        : userProfile === "seller-NA"
+        ? "bid_otp.php"
+        : userProfile === "buyer-A"
         ? "signup_bid.php"
+        : userProfile === "buyer-NA"
+        ? "otp.php"
         : "login.php";
   }
   if (cookies.USER_NAME) {
@@ -112,6 +138,6 @@ function updateTextSpeed() {
 }
 
 // Start controlling news and adjust scrolling on resize
-userProfile();
+setUserProfile();
 controlNews();
 window.addEventListener("resize", updateTextSpeed);

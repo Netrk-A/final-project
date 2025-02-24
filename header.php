@@ -33,10 +33,11 @@
         </div>
         <nav class="navbar">
             <a class="nav-item" href="index.php">Home</a>
-            <a class="nav-item" href="footer.php">Categories</a>
-            <a class="nav-item" href="bids.php" class="active">Bids</a>
-            <a class="nav-item" href="test.php">About us</a>
+            <a class="nav-item" href="#">Categories</a>
+            <a class="nav-item" href="#" class="active">Bids</a>
+            <a class="nav-item" href="#">About us</a>
             <a class="nav-item" href="#">Contact us</a>
+            <a class="nav-item upload-product" href="signup_bid.php">Add Product</a>
         </nav>
         <div class="nav-overlay"></div>
     </header>
