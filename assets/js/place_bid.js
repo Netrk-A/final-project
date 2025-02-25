@@ -1,9 +1,10 @@
 const imageUpload = document.getElementById("imageUpload");
 const imgContainer = document.querySelector(".upload-container");
-const imagePreview = document.getElementById("imagePreview");
+const imagePreview = document.querySelector(".previews");
 const uploadContainer = document.querySelector(".upload-container");
 const submitBtn = document.querySelector(`input[type='submit']`);
 const categoriesDOM = document.querySelector("#category");
+const loaderModal = document.querySelector(".full-c");
 let files = []; // Change file to files (array)
 const inputFields = {
   name: document.getElementById("productName"),
@@ -23,9 +24,16 @@ const formObject = {};
 imageUpload.addEventListener("change", (event) => {
   files = event.target.files; // Store multiple files
   if (files.length > 0) {
-    // Display the first image preview (optional)
-    imagePreview.src = URL.createObjectURL(files[0]);
-    imgContainer.classList.add("hide");
+    for (let i = 0; i < files.length; i++) {
+      const markup = `
+                <div class="preview">
+                <img src="${URL.createObjectURL(
+                  files[i]
+                )}" alt="product preview">
+                </div>
+      `;
+      imagePreview.insertAdjacentHTML("beforeend", markup);
+    }
   }
 });
 
@@ -125,10 +133,31 @@ async function postData() {
 
     const responseData = await response.json();
     console.log("swal success");
+    loaderModal.style.visibility = "hidden";
+    loaderModal.style.display = "none";
     Swal.fire({
-      text: responseData.message,
       icon: "success",
-      confirmButtonText: "continue",
+      title: "Upload success",
+      confirmButtonText: "Retry",
+      html: `
+            <p>your product is being reviewed by the administrator takes one or two days</p>
+            You will be redirected in <strong></strong> seconds.
+            `,
+      timer: 15000,
+      timerProgressBar: true,
+      didOpen: () => {
+        Swal.showLoading();
+        const b = Swal.getHtmlContainer().querySelector("strong");
+        let timerInterval = setInterval(() => {
+          b.textContent = (Swal.getTimerLeft() / 1000).toFixed(0);
+        }, 100);
+      },
+    }).then((result) => {
+      /* Read more about handling dismissals below */
+      //if (result.dismiss === Swal.DismissReason.timer) {
+      console.log("I was closed by the timer");
+      window.location.href = "index.php"; // Replace with your URL
+      //}
     });
   } catch (error) {
     console.log("swal success");
@@ -138,11 +167,15 @@ async function postData() {
       icon: "error",
       confirmButtonText: "Retry",
     });
+    loaderModal.style.visibility = "hidden";
+    loaderModal.style.display = "none";
   }
 }
 
 submitBtn.addEventListener("click", (e) => {
   e.preventDefault();
+  loaderModal.style.visibility = "visible";
+  loaderModal.style.display = "block";
   collectFormData();
   postData();
 });

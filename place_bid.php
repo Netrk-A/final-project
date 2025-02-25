@@ -39,6 +39,14 @@
     <!-- header -->
     <?php include "header.php"?>
 
+    <!-- loader -->
+    <div class="full-c" style="display: none;">
+        <div id="loader" style="display: block;">
+            <div class="spinner"></div>
+            <p> Loading . . .</p>
+        </div>
+    </div>
+
     <!-- form -->
     <div class="form" id="placeBid">
         <form id="uploadProduct" action="" method="post">
@@ -50,6 +58,8 @@
                     <span class="upload-text">Drag and drop your product photo</span>
                     <img id="imagePreview" class="image-preview" style="width = 100%;"></img>
                 </label>
+            </div>
+            <div class="previews">
             </div>
             <div class="input-container">
                 <input type="text" name="productName" minlength="12" id="productName" placeholder="Product name"
